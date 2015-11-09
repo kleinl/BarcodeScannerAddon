@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BarcodeScannerAddon</string>
+
+
+    <!-- Button Names -->
+    <string name="start_survey">Start Survey</string>
+    <string name="action_settings">Settings</string>
+</resources>
