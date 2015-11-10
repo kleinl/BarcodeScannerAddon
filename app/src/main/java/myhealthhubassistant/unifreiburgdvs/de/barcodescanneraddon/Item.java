@@ -29,7 +29,6 @@ import myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.json.BarcodeIt
  * Created by lukas on 09.11.15.
  */
 public class Item extends AppCompatActivity {
-    private String name;
     private String barcode;
     private ProgressBar bar;
     private EditText nameEdit;
@@ -75,7 +74,7 @@ public class Item extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        name = intent.getStringExtra("name");
+        String name = intent.getStringExtra("name");
         if (name == null) {
             barcode = intent.getStringExtra("barcode");
             if (isNetworkAvailable()) {
