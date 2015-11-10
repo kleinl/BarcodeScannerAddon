@@ -10,7 +10,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NewItemByBarcode"
+        android:text="@string/new_item_by_barcode"
         android:id="@+id/NewItemByBarcode"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -18,9 +18,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NewItemByList"
+        android:text="@string/new_item_by_list"
         android:id="@+id/NewItemByList"
         android:layout_below="@+id/NewItemByBarcode"
         android:layout_centerHorizontal="true" />
-
 </RelativeLayout>

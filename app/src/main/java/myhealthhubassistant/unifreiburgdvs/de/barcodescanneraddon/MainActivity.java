@@ -12,18 +12,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 
-import myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.utils.Constants;
-
 public class MainActivity extends AppCompatActivity {
 
-    private SharedPreferences prefs;
+    public static SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         prefs = this.getSharedPreferences(
-                Constants.packageName, Context.MODE_PRIVATE);
-        String userId = prefs.getString(Constants.userId, "");
+                "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
+        String userId = prefs.getString("ID", "");
         // Check if survey has started yet.
         if (userId.isEmpty()) {
             setContentView(R.layout.activity_main);
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                prefs.edit().putString(Constants.userId, input.getText().toString()).apply();
+                prefs.edit().putString("ID", input.getText().toString()).apply();
                 alert2.show();
             }
         });
@@ -84,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         });
         alert2.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                prefs.edit().putString(Constants.userId, "").apply();
+                prefs.edit().putString("ID", "").apply();
             }
         });
     }

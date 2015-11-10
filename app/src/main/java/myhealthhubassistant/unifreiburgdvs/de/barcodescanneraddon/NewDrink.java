@@ -27,10 +27,22 @@ public class NewDrink extends AppCompatActivity {
                 startScanning();
             }
         });
+
+        newItemByList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startList();
+            }
+        });
     }
 
     private void startScanning() {
         new IntentIntegrator(this).initiateScan(); // `this` is the current Activity
+    }
+
+    private void startList() {
+        Intent sendIntent = new Intent(NewDrink.this, List.class);
+        startActivity(sendIntent);
     }
 
     @Override

@@ -16,7 +16,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="a"
+        android:text="@string/edit_text_name"
         android:layout_above="@+id/name"
         android:layout_centerHorizontal="true" />
 
@@ -33,7 +33,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="bt"
+        android:text="@string/edit_text_amount"
         android:id="@+id/text_amount"
         android:layout_above="@+id/plus_btn"
         android:layout_centerHorizontal="true" />
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/edit_amount"
         android:layout_centerHorizontal="true"
-        android:text="c" />
+        android:text="@string/button_plus" />
 
     <EditText
         android:inputType="number"
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/scan_save_btn"
         android:layout_centerHorizontal="true"
-        android:text="d" />
+        android:text="@string/button_minus" />
 
     <Button
         android:id="@+id/scan_save_btn"
@@ -70,6 +70,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="e" />
+        android:text="@string/button_save" />
 
 </RelativeLayout>
