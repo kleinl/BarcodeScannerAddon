@@ -1,6 +1,8 @@
 package myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         alert2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
+                alarmForSurvey(MainActivity.this, true);
                 prefs.edit().putInt("RUNTIME", input2.getValue()).apply();
                 prefs.edit().putLong("STARTTIME", System.currentTimeMillis()).apply();
                 Intent intent = new Intent(MainActivity.this, NewDrink.class);
@@ -85,5 +90,41 @@ public class MainActivity extends AppCompatActivity {
                 prefs.edit().putString("ID", "").apply();
             }
         });
+    }
+
+    // Notification for survey
+    public static void alarmForSurvey(Context c, boolean first) {
+        AlarmManager alarmManager = (AlarmManager) c.getSystemService(Context.ALARM_SERVICE);
+        Calendar[] calendars = new Calendar[7];
+        Intent[] intents = new Intent[7];
+        for (int i = 0; i < 7; i++) {
+            calendars[i] = Calendar.getInstance();
+            calendars[i].setTimeInMillis(System.currentTimeMillis());
+            switch(i) {
+                case 0: calendars[i].set(Calendar.HOUR_OF_DAY, 8);
+                    break;
+                case 1: calendars[i].set(Calendar.HOUR_OF_DAY, 10);
+                    break;
+                case 2: calendars[i].set(Calendar.HOUR_OF_DAY, 12);
+                    break;
+                case 3: calendars[i].set(Calendar.HOUR_OF_DAY, 14);
+                    break;
+                case 4: calendars[i].set(Calendar.HOUR_OF_DAY, 16);
+                    break;
+                case 5: calendars[i].set(Calendar.HOUR_OF_DAY, 18);
+                    break;
+                case 6: calendars[i].set(Calendar.HOUR_OF_DAY, 20);
+                    break;
+            }
+            if (first) {
+                calendars[i].add(Calendar.DATE, 1);
+            }
+            intents[i] = new Intent(c.getApplicationContext(), AlarmReceiver.class);
+            intents[i].putExtra("time", i);
+            intents[i].putExtra("usage", "create");
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(c.getApplicationContext(), i, intents[i], PendingIntent.FLAG_UPDATE_CURRENT);
+            alarmManager.cancel(pendingIntent);
+            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendars[i].getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+        }
     }
 }

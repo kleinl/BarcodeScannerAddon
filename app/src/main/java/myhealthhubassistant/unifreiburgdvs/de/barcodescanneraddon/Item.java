@@ -21,6 +21,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 import myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.json.BarcodeItem;
 import myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.json.BarcodeItemToJson;
@@ -82,11 +85,35 @@ public class Item extends AppCompatActivity {
             }
         } else {
             nameEdit.setText(name);
+            barcode = "-";
         }
     }
 
     private void save() {
-        BarcodeItem barcodeItem = new BarcodeItem(-1, nameEdit.getText().toString(), barcode, "1", "1", Integer.valueOf(editTextAmount.getText().toString()));
+        String id = MainActivity.prefs.getString("ID", "");
+        String name = nameEdit.getText().toString();
+        String ssb;
+        if (barcode.equals("-")) {
+            if (name.equals(getResources().getString(R.string.ssb1)) ||
+                    name.equals(getResources().getString(R.string.ssb2)) ||
+                    name.equals(getResources().getString(R.string.ssb3)) ||
+                    name.equals(getResources().getString(R.string.ssb4))) {
+                ssb = "1";
+            } else {
+                ssb = "0";
+            }
+        } else {
+            ssb = "-";
+        }
+        String date;
+        String time;
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd:MM:yyyy", Locale.getDefault());
+        date = sdf.format(c.getTime());
+        SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
+        time = sdf2.format(c.getTime());
+        BarcodeItem barcodeItem = new BarcodeItem("item", id, date, time, name,
+                Integer.valueOf(editTextAmount.getText().toString()), barcode, ssb);
         JSONObject key;
         try {
             key = BarcodeItemToJson.getJSONfromBarcode(barcodeItem);
