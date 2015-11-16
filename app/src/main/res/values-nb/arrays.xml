@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- List Activity -->
+    <!-- List 1 -->
+    <string-array name="list1">
+        <item>Melk og melkebaserte drikker (f.eks. Lettmelk, Sjokolademelk, Biola)</item>
+        <item>Kaffe, Te</item>
+        <item>Vann</item>
+        <item>Alkohol (f.eks. Øl, Rusbrus, Vin, Brennevin)</item>
+        <item>andre drikker</item>
+    </string-array>
+
+    <!-- List 2 -->
+    <string-array name="list2">
+        <item>Sukkerholdig brus (f.eks. Coca Cola, Solo)</item>
+        <item>Annen sukkerholdig drikke (f.eks. Saft, Kuli, Solrik, Nestea)</item>
+        <item>Sportsdrikk (f.eks. Gatorade, Powerade, Maxim)</item>
+        <item>Energidrikk (f.eks. Redbull, Burn, Battery)</item>
+        <item>Sukkerfri brus (f.eks. Coca Cola light, Pepsi Max, Solo Super)</item>
+        <item>Annen sukkerfri drikke (f.eks. Fun light, Nestea light)</item>
+        <item>Smoothie (f.eks. Bendit, Hjemmelaget smoothie)</item>
+        <item>Fruktjuice (f.eks. Eplejuice, Appelsinjuice)</item>
+        <item>Grønnsaksjuice (f.eks. Gulrotjuice, Rødbetjuice)</item>
+    </string-array>
+</resources>

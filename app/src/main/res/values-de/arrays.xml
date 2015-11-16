@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- List Activity -->
+    <!-- List 1 -->
+    <string-array name="list1">
+        <item>Milch und Milchgetränke (z. B. Milch, Buttermilch, Schokoladenmilch, Joghurtdrinks)</item>
+        <item>Kaffe, Tee</item>
+        <item>Wasser</item>
+        <item>Alkohol</item>
+        <item>Sonstige Getränke</item>
+    </string-array>
+
+    <!-- List 2 -->
+    <string-array name="list2">
+        <item>Gesüßtes, kohlensäurehaltiges Getränk (z. B. Coca Cola, Fanta)</item>
+        <item>Anderes gesüßtes Getränk (z. B. Caprisonne, Durstlöscher, Nestea)</item>
+        <item>Sportgetränk (z. B. Gatorade, Powerade, Isostar, Active O2)</item>
+        <item>Energy-Drinks (z. B. Red Bull, Monster, Rockstar)</item>
+        <item>Kohlensäurehaltige Lightgetränke (e.g. Coca Cola Light &amp; Zero, Pepsi Light)</item>
+        <item>Andere Lightgetränke (z. B. Nestea Light)</item>
+        <item>Smoothie</item>
+        <item>Fruchtsaft</item>
+        <item>Gemüsesaft</item>
+    </string-array>
+</resources>

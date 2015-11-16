@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 import java.util.Calendar;
 import java.util.Random;
@@ -15,10 +16,14 @@ import java.util.Random;
  * alarm receiver.
  */
 public class AlarmReceiver extends BroadcastReceiver {
-    public static int counter = (MainActivity.prefs.getInt("RUNTIME", 0)) * 7;
+    SharedPreferences preferences;
     @Override
     public void onReceive(Context context, Intent intent) {
+        preferences = context.getSharedPreferences(
+                "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
+        int counter = (preferences.getInt("RUNTIME", 0)) * 7;
         counter--;
+        preferences.edit().putInt("RUNTIME", counter).apply();
         if (counter >= 0) {
             AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
             Intent intentNew = new Intent(context, AlarmReceiver2.class);

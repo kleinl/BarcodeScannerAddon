@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -71,8 +72,14 @@ public class Item extends AppCompatActivity {
         Button save = (Button) findViewById(R.id.scan_save_btn);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                save();
+                public void onClick(View v) {
+                String title = nameEdit.getText().toString();
+                if (TextUtils.isEmpty(title)) {
+                    nameEdit.setError(getResources().getString(R.string.forgot_name));
+                    return;
+                } else {
+                    save();
+                }
             }
         });
 

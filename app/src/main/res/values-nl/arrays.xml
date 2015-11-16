@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- List Activity -->
+    <!-- List 1 -->
+    <string-array name="list1">
+        <item>Melk en zuiveldranken (bijv. halfvolle melk, chocolademelk, Fristi)</item>
+        <item>Koffie, Thee</item>
+        <item>Water</item>
+        <item>Alcohol</item>
+        <item>andere dranken</item>
+    </string-array>
+
+    <!-- List 2 -->
+    <string-array name="list2">
+        <item>Suiker- en koolzuurhoudende drankjes (bijv. Coca Cola, Fanta, bitter lemon)</item>
+        <item>Andere suikerhoudende drankjes (bijv. Taksi, Wicky, DubbelFrisss, Ice tea)</item>
+        <item>Sport dranken (bijv. Aquarius, AA Drink)</item>
+        <item>Energie drankjes (bijv. Redbull, Bullit, Monster)</item>
+        <item>Koolzuurhoudende light drankjes (bijv. Coca Cola light, Pepsi Max)</item>
+        <item>Andere light drankjes (bijv. Ice tea zero, Crystal Clear suikervrij)</item>
+        <item>Smoothies (bijv. Innocent Smoothie, Smaakt Smoothie)</item>
+        <item>Vruchtensap (bijv. appelsap, sinaasappelsap)</item>
+        <item>Groentesap (bijv. wortelsap, tomatensap)</item>
+    </string-array>
+</resources>
