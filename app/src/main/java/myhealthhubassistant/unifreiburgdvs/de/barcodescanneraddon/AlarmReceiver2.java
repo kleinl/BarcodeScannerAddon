@@ -48,8 +48,7 @@ public class AlarmReceiver2 extends BroadcastReceiver {
             if (time == 0 && counter == 2) {
                 Notification notification1 = builder2
                         .setSmallIcon(R.drawable.ic_launcher)
-                        .setContentTitle("BarcodeScannerAddon")
-                        .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getResources().getString(R.string.acc)))
+                        .setContentTitle(context.getResources().getString(R.string.acc))
                         .build();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     notification1.priority = Notification.PRIORITY_MAX;

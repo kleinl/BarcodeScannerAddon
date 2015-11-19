@@ -12,7 +12,7 @@
 
     <!-- Item Activity -->
     <string name="button_save">lagre</string>
-    <string name="edit_text_amount">beløp i ml:</string>
+    <string name="edit_text_amount">jar (200 ml):</string>
     <string name="edit_text_name">navn:</string>
     <string name="button_plus">+</string>
     <string name="button_minus">-</string>

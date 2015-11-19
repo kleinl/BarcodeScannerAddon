@@ -21,10 +21,8 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         preferences = context.getSharedPreferences(
                 "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
-        int counter = (preferences.getInt("RUNTIME", 0)) * 7;
-        counter--;
-        preferences.edit().putInt("RUNTIME", counter).apply();
-        if (counter >= 0) {
+        Calendar cal = Calendar.getInstance();
+        if (preferences.getLong("STOPTIME", 0) > cal.getTimeInMillis()) {
             AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
             Intent intentNew = new Intent(context, AlarmReceiver2.class);
             int time = intent.getIntExtra("time", -1);
@@ -75,13 +73,14 @@ public class AlarmReceiver extends BroadcastReceiver {
             intentNew.putExtra("time", time);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(context, time, intentNew, PendingIntent.FLAG_UPDATE_CURRENT);
             String usage = intent.getStringExtra("usage");
-            Calendar cal = Calendar.getInstance();
+            cal = Calendar.getInstance();
+            long timeNow = cal.getTimeInMillis();
             cal.set(Calendar.HOUR_OF_DAY, hour);
             cal.set(Calendar.MINUTE, minute);
-            if (usage.equals("create")) {
+            long timeThen = cal.getTimeInMillis();
+            if (usage.equals("create") && timeThen > timeNow) {
                 alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,
-                        cal.getTimeInMillis(),
-                        600000, pendingIntent);
+                        cal.getTimeInMillis(), 600000, pendingIntent);
             } else if (usage.equals("delete")) {
                 AlarmReceiver2.counter = 3;
                 alarmManager.cancel(pendingIntent);

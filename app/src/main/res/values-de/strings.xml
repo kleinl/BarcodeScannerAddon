@@ -12,7 +12,7 @@
 
     <!-- Item Activity -->
     <string name="button_save">Speichern</string>
-    <string name="edit_text_amount">Menge in ml:</string>
+    <string name="edit_text_amount">Gläser(200 ml):</string>
     <string name="edit_text_name">Name:</string>
     <string name="button_plus">+</string>
     <string name="button_minus">-</string>

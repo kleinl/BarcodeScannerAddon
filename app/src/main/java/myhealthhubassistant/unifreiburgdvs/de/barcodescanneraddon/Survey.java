@@ -1,6 +1,8 @@
 package myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -42,12 +44,17 @@ public class Survey extends AppCompatActivity {
     private String[] question6Right;
     private int[] answer;
     private NumberPicker minutePicker;
+    private SharedPreferences prefs;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.survey);
         Resources res = getResources();
+
+        prefs = this.getSharedPreferences(
+                "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
+
         question1 = res.getStringArray(R.array.survey1);
         question2 = res.getStringArray(R.array.survey2);
         question3 = res.getStringArray(R.array.survey3);
@@ -274,7 +281,7 @@ public class Survey extends AppCompatActivity {
     }
 
     private void saveAndDissmiss() {
-        String id = MainActivity.prefs.getString("ID", "");
+        String id = prefs.getString("ID", "");
         String date;
         String time;
         Calendar c = Calendar.getInstance();

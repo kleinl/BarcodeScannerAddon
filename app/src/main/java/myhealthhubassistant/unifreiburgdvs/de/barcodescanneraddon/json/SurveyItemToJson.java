@@ -14,7 +14,7 @@ public class SurveyItemToJson {
 
         JSONObject jsonObj = new JSONObject();
         jsonObj.putOpt("KIND", "survey");
-        jsonObj.putOpt("USER_ID", MainActivity.prefs.getString("ID", "no id"));
+        jsonObj.putOpt("USER_ID", surveyItem.getId());
         jsonObj.putOpt("TIME", surveyItem.getTime());
         jsonObj.putOpt("DATE", surveyItem.getDate());
         jsonObj.putOpt("SURVEY", surveyItem.getSurvey());
