@@ -3,11 +3,8 @@ package myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,9 +19,8 @@ import java.util.Locale;
  * Created by lukas on 09.11.15.
  */
 public class Item extends AppCompatActivity {
-    private EditText nameEdit;
+    private TextView nameEdit;
     private EditText editTextAmount;
-    private Location location;
     private SharedPreferences prefs;
     private String ssb;
     private String amount = "";
@@ -33,8 +29,7 @@ public class Item extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item);
-        nameEdit = (EditText) findViewById(R.id.name);
-        TextView text = (TextView) findViewById(R.id.text_amount);
+        nameEdit = (TextView) findViewById(R.id.name);
         editTextAmount = (EditText) findViewById(R.id.edit_amount);
         editTextAmount.setText("1");
         prefs = this.getSharedPreferences(
@@ -61,21 +56,6 @@ public class Item extends AppCompatActivity {
             }
         });
 
-        Button save = (Button) findViewById(R.id.scan_save_btn);
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                location = MainActivity.locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                String title = nameEdit.getText().toString();
-                if (TextUtils.isEmpty(title)) {
-                    nameEdit.setError(getResources().getString(R.string.forgot_name));
-                    return;
-                } else {
-                    save();
-                }
-            }
-        });
-
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         nameEdit.setText(name);
@@ -88,10 +68,7 @@ public class Item extends AppCompatActivity {
             ssb = "0";
         }
         if (ssb.equals("0")) {
-            editTextAmount.setVisibility(View.INVISIBLE);
-            plus.setVisibility(View.INVISIBLE);
-            minus.setVisibility(View.INVISIBLE);
-            text.setVisibility(View.INVISIBLE);
+            save();
             amount = "-";
         }
     }
@@ -99,10 +76,6 @@ public class Item extends AppCompatActivity {
     private void save() {
         String lng = "-";
         String lat = "-";
-        if (location != null) {
-            lng = String.valueOf(location.getLongitude());
-            lat = String.valueOf(location.getLatitude());
-        }
         String date;
         String time;
         Calendar c = Calendar.getInstance();
@@ -125,4 +98,5 @@ public class Item extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 }

@@ -1,5 +1,6 @@
 package myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -45,6 +46,7 @@ public class Survey extends AppCompatActivity {
     private int[] answer;
     private NumberPicker minutePicker;
     private SharedPreferences prefs;
+    private int time;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,7 @@ public class Survey extends AppCompatActivity {
         question6Left = res.getStringArray(R.array.survey6left);
         question6Right = res.getStringArray(R.array.survey6right);
         int survey = getIntent().getIntExtra("survey", -1);
+        time = getIntent().getIntExtra("time", -1);
 
         question = (TextView) findViewById(R.id.question);
         decicion = (RadioGroup) findViewById(R.id.radioGroup);
@@ -302,6 +305,16 @@ public class Survey extends AppCompatActivity {
                 Intent intent1 = new Intent(Survey.this, Survey.class);
                 intent1.putExtra("survey", surveyNumber + 1);
                 startActivity(intent1);
+            } else {
+                Intent newIntent = new Intent(Survey.this, AlarmReceiver.class);
+                newIntent.putExtra("time", this.time);
+                newIntent.putExtra("usage", "delete");
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(this, (int) System.currentTimeMillis(), newIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                try {
+                    pendingIntent.send();
+                } catch (PendingIntent.CanceledException e) {
+                    e.printStackTrace();
+                }
             }
             finish();
         } catch (JSONException e) {

@@ -7,29 +7,24 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
-import com.google.android.gms.location.LocationRequest;
 
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static LocationManager locationManager;
     private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        createLocationRequest();
 
         prefs = this.getSharedPreferences(
                 "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
@@ -49,13 +44,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-    }
-
-    private void createLocationRequest() {
-        LocationRequest mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(10000);
-        mLocationRequest.setFastestInterval(5000);
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
     private void startSurvey() {
@@ -100,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 time = time + TimeUnit.DAYS.toMillis(input2.getValue());
                 prefs.edit().putLong("STOPTIME", time).apply();
                 prefs.edit().putLong("STARTTIME", Calendar.DATE).apply();
-                Intent intent = new Intent(MainActivity.this, List.class);
-                startActivity(intent);
                 finish();
             }
         });

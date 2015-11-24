@@ -19,11 +19,10 @@ public class AlarmReceiver2 extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         counter--;
+        Log.e("test", String.valueOf(counter));
         NotificationManager mNM;
         mNM = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
         int time = intent.getIntExtra("time", -1);
-        Log.e("counter", String.valueOf(counter));
-        Log.e("time", String.valueOf(time));
 
         if (counter != 0) {
             Intent openSurvey = new Intent(context, Survey.class);

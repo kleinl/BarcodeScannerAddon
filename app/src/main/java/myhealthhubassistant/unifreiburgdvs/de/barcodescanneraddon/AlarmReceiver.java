@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import java.util.Calendar;
 import java.util.Random;
@@ -82,6 +83,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,
                         cal.getTimeInMillis(), 600000, pendingIntent);
             } else if (usage.equals("delete")) {
+                Log.e("test", "problem");
                 AlarmReceiver2.counter = 3;
                 alarmManager.cancel(pendingIntent);
             }

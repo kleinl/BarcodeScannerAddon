@@ -10,8 +10,10 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 
@@ -32,7 +34,6 @@ import myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.json.BarcodeIt
  * Created by klein on 19.11.2015.
  */
 public class BarcodeAvaiable extends AppCompatActivity {
-    private ProgressBar bar;
     private String id;
     private String name;
     private String date;
@@ -43,11 +44,11 @@ public class BarcodeAvaiable extends AppCompatActivity {
     private String lat;
     private String barcode;
     private String barcodeName;
+    private EditText editName;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        bar = (ProgressBar) findViewById(R.id.progressBar);
         id = intent.getStringExtra("ID");
         name = intent.getStringExtra("NAME");
         date = intent.getStringExtra("DATE");
@@ -56,7 +57,18 @@ public class BarcodeAvaiable extends AppCompatActivity {
         ssb = intent.getStringExtra("SSB");
         lng = intent.getStringExtra("LNG");
         lat = intent.getStringExtra("LAT");
+        barcode = "-";
+        barcodeName = "-";
         setContentView(R.layout.barcode_avaiable);
+        editName = (EditText) findViewById(R.id.edit_name);
+        final Button save = (Button) findViewById(R.id.save_btn);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                barcodeName = editName.getText().toString();
+                save();
+            }
+        });
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Barcode Avaiable?");
         alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
@@ -66,19 +78,7 @@ public class BarcodeAvaiable extends AppCompatActivity {
         });
         alert.setNegativeButton("NO", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                BarcodeItem barcodeItem = new BarcodeItem("item", id, date, time, name,
-                        amount, "-", "-", ssb, lng, lat);
-
-                JSONObject key;
-                try {
-                    key = BarcodeItemToJson.getJSONfromBarcode(barcodeItem);
-                    Intent intent = new Intent(BarcodeAvaiable.this, Connection.class);
-                    intent.putExtra("json", key.toString());
-                    startActivity(intent);
-                    finish();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                save();
             }
         });
         alert.show();
@@ -99,21 +99,25 @@ public class BarcodeAvaiable extends AppCompatActivity {
                     MyTask task = new MyTask();
                     task.execute();
                 } else {
-                    BarcodeItem barcodeItem = new BarcodeItem("item", id, date, time, name,
-                            amount, "-", "-", ssb, lng, lat);
-
-                    JSONObject key;
-                    try {
-                        key = BarcodeItemToJson.getJSONfromBarcode(barcodeItem);
-                        Intent intent2 = new Intent(BarcodeAvaiable.this, Connection.class);
-                        intent2.putExtra("json", key.toString());
-                        startActivity(intent2);
-                        finish();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                  save();
                 }
             }
+        }
+    }
+
+    private void save() {
+        BarcodeItem barcodeItem = new BarcodeItem("item", id, date, time, name,
+                amount, barcode, barcodeName, ssb, lng, lat);
+
+        JSONObject key;
+        try {
+            key = BarcodeItemToJson.getJSONfromBarcode(barcodeItem);
+            Intent intent = new Intent(BarcodeAvaiable.this, Connection.class);
+            intent.putExtra("json", key.toString());
+            startActivity(intent);
+            finish();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 
@@ -194,20 +198,7 @@ public class BarcodeAvaiable extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            barcodeName = result;
-            BarcodeItem barcodeItem = new BarcodeItem("item", id, date, time, name,
-                    amount, barcode, barcodeName, ssb, lng, lat);
-
-            JSONObject key;
-            try {
-                key = BarcodeItemToJson.getJSONfromBarcode(barcodeItem);
-                Intent intent = new Intent(BarcodeAvaiable.this, Connection.class);
-                intent.putExtra("json", key.toString());
-                startActivity(intent);
-                finish();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            editName.setText(result);
         }
     }
 }
