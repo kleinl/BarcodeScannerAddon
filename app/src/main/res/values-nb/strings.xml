@@ -18,10 +18,10 @@
     <string name="button_minus">-</string>
     <string name="forgot_name">Please enter name!</string>
     <!-- List Items with ssb -->
-    <string name="ssb1">Sukkerholdig brus (f.eks. Coca Cola, Solo)</string>
-    <string name="ssb2">Annen sukkerholdig drikke (f.eks. Saft, Kuli, Solrik, Nestea)</string>
-    <string name="ssb3">Sportsdrikk (f.eks. Gatorade, Powerade, Maxim)</string>
-    <string name="ssb4">Energidrikk (f.eks. Redbull, Burn, Battery)</string>
+    <string name="ssb1">Sukkerholdig brus</string>
+    <string name="ssb2">Annen sukkerholdig drikke</string>
+    <string name="ssb3">Sportsdrikk</string>
+    <string name="ssb4">Energidrikk</string>
 
     <!-- List Activity -->
     <string name="more_drinks">andre drikker</string>

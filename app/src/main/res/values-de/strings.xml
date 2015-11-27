@@ -18,10 +18,10 @@
     <string name="button_minus">-</string>
     <string name="forgot_name">Bitte geben einen Namen ein!</string>
     <!-- List Items with ssb -->
-    <string name="ssb1">Gesüßtes, kohlensäurehaltiges Getränk (z. B. Coca Cola, Fanta)</string>
-    <string name="ssb2">Anderes gesüßtes Getränk (z. B. Caprisonne, Durstlöscher, Nestea)</string>
-    <string name="ssb3">Sportgetränk (z. B. Gatorade, Powerade, Isostar, Active O2)</string>
-    <string name="ssb4">Energy-Drinks (z. B. Red Bull, Monster, Rockstar)</string>
+    <string name="ssb1">Gesüßtes, kohlensäurehaltiges Getränk</string>
+    <string name="ssb2">Anderes gesüßtes Getränk</string>
+    <string name="ssb3">Sportgetränk</string>
+    <string name="ssb4">Energy-Drinks</string>
 
     <!-- List Activity -->
     <string name="more_drinks">Sonstige Getränke</string>

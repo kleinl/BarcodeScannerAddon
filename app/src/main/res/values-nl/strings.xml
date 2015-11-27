@@ -18,10 +18,10 @@
     <string name="button_minus">-</string>
     <string name="forgot_name">Bitte geben einen Namen ein!</string>
     <!-- List Items with ssb -->
-    <string name="ssb1">Suiker- en koolzuurhoudende drankjes (bijv. Coca Cola, Fanta, bitter lemon)</string>
-    <string name="ssb2">Andere suikerhoudende drankjes (bijv. Taksi, Wicky, DubbelFrisss, Ice tea)</string>
-    <string name="ssb3">Sport dranken (bijv. Aquarius, AA Drink)</string>
-    <string name="ssb4">Energie drankjes (bijv. Redbull, Bullit, Monster)</string>
+    <string name="ssb1">Suiker- en koolzuurhoudende drankjes</string>
+    <string name="ssb2">Andere suikerhoudende drankjes</string>
+    <string name="ssb3">Sport dranken</string>
+    <string name="ssb4">Energie drankjes</string>
 
     <!-- List Activity -->
     <string name="more_drinks">andere dranken</string>

@@ -31,7 +31,7 @@ public class Item extends AppCompatActivity {
         setContentView(R.layout.item);
         nameEdit = (TextView) findViewById(R.id.name);
         editTextAmount = (EditText) findViewById(R.id.edit_amount);
-        editTextAmount.setText("1");
+        editTextAmount.setText("0.5");
         prefs = this.getSharedPreferences(
                 "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
         Button plus = (Button) findViewById(R.id.plus_btn);
@@ -39,8 +39,10 @@ public class Item extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                int ml = Integer.parseInt(editTextAmount.getText().toString());
-                ml += 1;
+                float ml = Float.parseFloat(editTextAmount.getText().toString());
+                if (ml < 5) {
+                    ml += 0.5;
+                }
                 editTextAmount.setText(String.valueOf(ml));
             }
         });
@@ -50,9 +52,19 @@ public class Item extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                int ml = Integer.parseInt(editTextAmount.getText().toString());
-                ml -= 1;
+                float ml = Float.parseFloat(editTextAmount.getText().toString());
+                if (ml > 0) {
+                    ml -= 0.5;
+                }
                 editTextAmount.setText(String.valueOf(ml));
+            }
+        });
+
+        Button save = (Button) findViewById(R.id.scan_save_btn);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                save();
             }
         });
 
@@ -68,8 +80,8 @@ public class Item extends AppCompatActivity {
             ssb = "0";
         }
         if (ssb.equals("0")) {
-            save();
             amount = "-";
+            save();
         }
     }
 

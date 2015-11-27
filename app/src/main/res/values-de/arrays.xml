@@ -3,23 +3,43 @@
     <!-- List Activity -->
     <!-- List 1 -->
     <string-array name="list1">
-        <item>Milch und Milchgetränke (z. B. Milch, Buttermilch, Schokoladenmilch, Joghurtdrinks)</item>
+        <item>Milch und Milchgetränke</item>
         <item>Kaffe, Tee</item>
         <item>Wasser</item>
         <item>Alkohol</item>
         <item>Sonstige Getränke</item>
     </string-array>
 
+    <string-array name="examples1">
+        <item>Milch, Buttermilch, Schokoladenmilch, Joghurtdrinks</item>
+        <item>schwarzer Kaffee, Cappuccino, Latte Macchiato, Schwarzer Tee, Grüner Tee, Chai Tee</item>
+        <item>Leitungswasser, Mineralwasser</item>
+        <item>Bier, Wein, Alcopops, Schnaps</item>
+        <item>-</item>
+    </string-array>
+
     <!-- List 2 -->
     <string-array name="list2">
-        <item>Gesüßtes, kohlensäurehaltiges Getränk (z. B. Coca Cola, Fanta)</item>
-        <item>Anderes gesüßtes Getränk (z. B. Caprisonne, Durstlöscher, Nestea)</item>
-        <item>Sportgetränk (z. B. Gatorade, Powerade, Isostar, Active O2)</item>
-        <item>Energy-Drinks (z. B. Red Bull, Monster, Rockstar)</item>
-        <item>Kohlensäurehaltige Lightgetränke (e.g. Coca Cola Light &amp; Zero, Pepsi Light)</item>
-        <item>Andere Lightgetränke (z. B. Nestea Light)</item>
+        <item>Gesüßtes, kohlensäurehaltiges Getränk</item>
+        <item>Anderes gesüßtes Getränk</item>
+        <item>Sportgetränk</item>
+        <item>Energy-Drinks</item>
+        <item>Kohlensäurehaltige Lightgetränke</item>
+        <item>Andere Lightgetränke</item>
         <item>Smoothie</item>
         <item>Fruchtsaft</item>
         <item>Gemüsesaft</item>
+    </string-array>
+
+    <string-array name="examples2">
+        <item>Coca Cola, Fanta</item>
+        <item>Caprisonne, Durstlöscher, Nestea</item>
+        <item>Gatorade, Powerade, Isostar, Active O2</item>
+        <item>Red Bull, Monster, Rockstar</item>
+        <item>Coca Cola Light &amp; Zero, Pepsi Light</item>
+        <item>Nestea Light</item>
+        <item>trué fruits, innocent, Rewe Smoothie</item>
+        <item>100 % Saft, z.B. Apfelsaft, Orangensaft</item>
+        <item>Karottensaft, Rotebeetesaft, Tomatensaft</item>
     </string-array>
 </resources>

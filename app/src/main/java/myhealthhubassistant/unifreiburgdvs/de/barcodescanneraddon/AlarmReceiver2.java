@@ -61,12 +61,7 @@ public class AlarmReceiver2 extends BroadcastReceiver {
             Intent intentNew = new Intent(context, AlarmReceiver.class);
             intentNew.putExtra("time", time);
             intentNew.putExtra("usage", "delete");
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, (int) System.currentTimeMillis(), intentNew, PendingIntent.FLAG_UPDATE_CURRENT);
-            try {
-                pendingIntent.send();
-            } catch (PendingIntent.CanceledException e) {
-                e.printStackTrace();
-            }
+            context.sendBroadcast(intentNew);
         }
 
     }

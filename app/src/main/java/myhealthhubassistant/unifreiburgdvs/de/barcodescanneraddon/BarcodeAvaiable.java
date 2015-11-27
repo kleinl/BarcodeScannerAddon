@@ -10,10 +10,10 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 
@@ -45,6 +45,7 @@ public class BarcodeAvaiable extends AppCompatActivity {
     private String barcode;
     private String barcodeName;
     private EditText editName;
+    private ProgressBar bar;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +63,8 @@ public class BarcodeAvaiable extends AppCompatActivity {
         setContentView(R.layout.barcode_avaiable);
         editName = (EditText) findViewById(R.id.edit_name);
         final Button save = (Button) findViewById(R.id.save_btn);
+        bar = (ProgressBar) findViewById(R.id.progressBar);
+        bar.setVisibility(View.INVISIBLE);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,6 +113,12 @@ public class BarcodeAvaiable extends AppCompatActivity {
                 amount, barcode, barcodeName, ssb, lng, lat);
 
         JSONObject key;
+
+
+
+
+
+
         try {
             key = BarcodeItemToJson.getJSONfromBarcode(barcodeItem);
             Intent intent = new Intent(BarcodeAvaiable.this, Connection.class);
@@ -134,6 +143,7 @@ public class BarcodeAvaiable extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
+            bar.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -199,6 +209,7 @@ public class BarcodeAvaiable extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             editName.setText(result);
+            bar.setVisibility(View.INVISIBLE);
         }
     }
 }

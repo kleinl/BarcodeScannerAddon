@@ -10,6 +10,14 @@
         <item>Other drinks</item>
     </string-array>
 
+    <string-array name="examples1">
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+    </string-array>
+
     <!-- List 2 -->
     <string-array name="list2">
         <item>Sugar sweetened carbonated drinks</item>
@@ -21,5 +29,17 @@
         <item>Smoothies</item>
         <item>Fruit juice</item>
         <item>Vegetable juice</item>
+    </string-array>
+
+    <string-array name="examples2">
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
     </string-array>
 </resources>

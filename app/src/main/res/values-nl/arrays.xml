@@ -3,23 +3,43 @@
     <!-- List Activity -->
     <!-- List 1 -->
     <string-array name="list1">
-        <item>Melk en zuiveldranken (bijv. halfvolle melk, chocolademelk, Fristi)</item>
+        <item>Melk en zuiveldranken</item>
         <item>Koffie, Thee</item>
         <item>Water</item>
         <item>Alcohol</item>
         <item>andere dranken</item>
     </string-array>
 
+    <string-array name="examples1">
+        <item>halfvolle melk, chocolademelk, Fristi</item>
+        <item>zwarte koffie, koffie verkeerd, zwarte thee, groene thee, rooibos thee</item>
+        <item>kraanwater, water uit fles</item>
+        <item>bier, wijn</item>
+        <item>-</item>
+    </string-array>
+
     <!-- List 2 -->
     <string-array name="list2">
-        <item>Suiker- en koolzuurhoudende drankjes (bijv. Coca Cola, Fanta, bitter lemon)</item>
-        <item>Andere suikerhoudende drankjes (bijv. Taksi, Wicky, DubbelFrisss, Ice tea)</item>
-        <item>Sport dranken (bijv. Aquarius, AA Drink)</item>
-        <item>Energie drankjes (bijv. Redbull, Bullit, Monster)</item>
-        <item>Koolzuurhoudende light drankjes (bijv. Coca Cola light, Pepsi Max)</item>
-        <item>Andere light drankjes (bijv. Ice tea zero, Crystal Clear suikervrij)</item>
-        <item>Smoothies (bijv. Innocent Smoothie, Smaakt Smoothie)</item>
-        <item>Vruchtensap (bijv. appelsap, sinaasappelsap)</item>
-        <item>Groentesap (bijv. wortelsap, tomatensap)</item>
+        <item>Suiker- en koolzuurhoudende drankjes</item>
+        <item>Andere suikerhoudende drankjes</item>
+        <item>Sport dranken</item>
+        <item>Energie drankjes</item>
+        <item>Koolzuurhoudende light drankjes</item>
+        <item>Andere light drankjes</item>
+        <item>Smoothies</item>
+        <item>Vruchtensap</item>
+        <item>Groentesap</item>
+    </string-array>
+
+    <string-array name="examples2">
+        <item>Coca Cola, Fanta, bitter lemon</item>
+        <item>Taksi, Wicky, DubbelFrisss, Ice tea</item>
+        <item>Aquarius, AA Drink</item>
+        <item>Redbull, Bullit, Monster</item>
+        <item>Coca Cola light, Pepsi Max</item>
+        <item>Ice tea zero, Crystal Clear suikervrij</item>
+        <item>Innocent Smoothie, Smaakt Smoothie</item>
+        <item>100% sap, bijv. appelsap, sinaasappelsap</item>
+        <item>wortelsap, tomatensap</item>
     </string-array>
 </resources>
