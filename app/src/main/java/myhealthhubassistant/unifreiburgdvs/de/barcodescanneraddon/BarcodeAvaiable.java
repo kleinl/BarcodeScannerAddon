@@ -65,6 +65,14 @@ public class BarcodeAvaiable extends AppCompatActivity {
         final Button save = (Button) findViewById(R.id.save_btn);
         bar = (ProgressBar) findViewById(R.id.progressBar);
         bar.setVisibility(View.INVISIBLE);
+        SingleShotLocationProvider.requestSingleUpdate(this,
+                new SingleShotLocationProvider.LocationCallback() {
+                    @Override
+                    public void onNewLocationAvailable(SingleShotLocationProvider.GPSCoordinates location) {
+                        lat = String.valueOf(location.latitude);
+                        lng = String.valueOf(location.longitude);
+                    }
+                });
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,14 +119,7 @@ public class BarcodeAvaiable extends AppCompatActivity {
     private void save() {
         BarcodeItem barcodeItem = new BarcodeItem("item", id, date, time, name,
                 amount, barcode, barcodeName, ssb, lng, lat);
-
         JSONObject key;
-
-
-
-
-
-
         try {
             key = BarcodeItemToJson.getJSONfromBarcode(barcodeItem);
             Intent intent = new Intent(BarcodeAvaiable.this, Connection.class);
