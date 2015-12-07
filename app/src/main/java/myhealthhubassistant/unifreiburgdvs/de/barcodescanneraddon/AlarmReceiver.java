@@ -72,20 +72,19 @@ public class AlarmReceiver extends BroadcastReceiver {
                     minute = r.nextInt(60);
             }
             intentNew.putExtra("time", time);
+            intentNew.setAction(String.valueOf(time));
             PendingIntent pendingIntent = PendingIntent.getBroadcast(context, time, intentNew, PendingIntent.FLAG_UPDATE_CURRENT);
             String usage = intent.getStringExtra("usage");
             cal = Calendar.getInstance();
-            long timeNow = cal.getTimeInMillis();
             cal.set(Calendar.HOUR_OF_DAY, hour);
             cal.set(Calendar.MINUTE, minute);
-            long timeThen = cal.getTimeInMillis();
-            if (usage.equals("create") && timeThen > timeNow) {
+            if (usage.equals("create")) {
                 alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,
                         cal.getTimeInMillis(), 600000, pendingIntent);
             } else if (usage.equals("delete")) {
-                Log.e("test", "problem");
                 AlarmReceiver2.counter = 3;
                 alarmManager.cancel(pendingIntent);
+                pendingIntent.cancel();
             }
         }
     }

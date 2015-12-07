@@ -23,8 +23,17 @@
     <string name="ssb3">Sportgetränk</string>
     <string name="ssb4">Energy-Drinks</string>
 
+    <!-- List Items without ssb -->
+    <string name="nossb1">Milch und Milchgetränke</string>
+    <string name="nossb2">Kaffe, Tee</string>
+
     <!-- List Activity -->
     <string name="more_drinks">Sonstige Getränke</string>
+
+    <!-- Barcode Avaiable Activity -->
+    <string name="barcode_avaiable">Barcode verfügbar?</string>
+    <string name="barcode_avaiable_yes">Ja</string>
+    <string name="barcode_avaiable_no">Nein</string>
 
     <!-- Surveys -->
     <string name="survey">Umfrage </string>
@@ -56,8 +65,8 @@
     <string name="survey2button1">1 (stimme gar nicht zu)</string>
     <string name="survey2button5">5 (stimme stark zu)</string>
     <string-array name="survey2">
-        <item>Seit der letzten Beantwortung: Ich hatte ein starkes Bedürfnis dazuzugehören.</item>
         <item>Zum jetzigen Zeitpunkt habe ich ein starkes Bedürfnis, dazuzugehören.</item>
+        <item>Seit der letzten Beantwortung: Ich hatte ein starkes Bedürfnis dazuzugehören.</item>
     </string-array>
     <string name="survey3button1">1 (gar nicht)</string>
     <string name="survey3button5">5 (sehr)</string>

@@ -2,6 +2,7 @@ package myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ public class List2 extends ListActivity {
                 TextView text2 = (TextView) view.findViewById(android.R.id.text2);
 
                 text1.setText(values[position]);
+                text1.setTypeface(null, Typeface.BOLD);
                 text2.setText(examples[position]);
                 return view;
             }

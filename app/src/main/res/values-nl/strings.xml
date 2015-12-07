@@ -23,8 +23,17 @@
     <string name="ssb3">Sport dranken</string>
     <string name="ssb4">Energie drankjes</string>
 
+    <!-- List Items without ssb -->
+    <string name="nossb1">Melk en zuiveldranken</string>
+    <string name="nossb2">Koffie, Thee</string>
+
     <!-- List Activity -->
     <string name="more_drinks">andere dranken</string>
+
+    <!-- Barcode Avaiable Activity -->
+    <string name="barcode_avaiable">barcode avaiable?</string>
+    <string name="barcode_avaiable_yes">Ja</string>
+    <string name="barcode_avaiable_no">Nei</string>
 
     <!-- Surveys -->
     <string name="survey">Poll </string>
@@ -57,14 +66,14 @@
     <string name="survey2button1">1 (sterk mee oneens)</string>
     <string name="survey2button5">5 (sterk mee eens)</string>
     <string-array name="survey2">
-        <item>Sinds uw laatste antwoord: Ik had een sterke behoefte om ergens bij te horen.</item>
         <item>Op dit specifieke moment: Ik heb een sterke behoefte om ergens bij te horen.</item>
+        <item>Sinds uw laatste antwoord: Ik had een sterke behoefte om ergens bij te horen.</item>
     </string-array>
 
     <string name="survey3button1">1 (helemaal niet)</string>
     <string name="survey3button5">5 (erg veel)</string>
     <string-array name="survey3">
-        <item>Op dit specifieke moment: Identificeren ik met/voel verbondenheid met mijn mede studenten/vrienden/familie.</item>
+        <item>Op dit specifieke moment: Ik identificeer me/voel verbondenheid met mijn mede studenten/vrienden/familie.</item>
         <item>Sinds uw laatste antwoord: Ik identificeer me/voel verbondenheid met mijn mede studenten/vrienden/familie.</item>
     </string-array>
 

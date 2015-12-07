@@ -12,7 +12,7 @@
 
     <!-- Item Activity -->
     <string name="button_save">lagre</string>
-    <string name="edit_text_amount">jar (200 ml):</string>
+    <string name="edit_text_amount">Glass (200 ml):</string>
     <string name="edit_text_name">navn:</string>
     <string name="button_plus">+</string>
     <string name="button_minus">-</string>
@@ -23,8 +23,17 @@
     <string name="ssb3">Sportsdrikk</string>
     <string name="ssb4">Energidrikk</string>
 
+    <!-- List Items without ssb -->
+    <string name="nossb1">Melk og melkebaserte drikker</string>
+    <string name="nossb2">Kaffe, Te</string>
+
     <!-- List Activity -->
-    <string name="more_drinks">andre drikker</string>
+    <string name="more_drinks">Andre drikker</string>
+
+    <!-- Barcode Avaiable Activity -->
+    <string name="barcode_avaiable">barcode avaiable?</string>
+    <string name="barcode_avaiable_yes">Yes</string>
+    <string name="barcode_avaiable_no">No</string>
 
     <!-- Surveys -->
     <string name="survey">Spørreskjema </string>
@@ -56,8 +65,8 @@
     <string name="survey2button1">1 (Sterkt uenig)</string>
     <string name="survey2button5">5 (Veldig enig)</string>
     <string-array name="survey2">
-        <item>Siden din forrige besvarelse: Jeg hadde et sterkt behov for tilhørighet.</item>
         <item>Akkurat nå har jeg et sterkt behov for tilhørighet.</item>
+        <item>Siden din forrige besvarelse: Jeg hadde et sterkt behov for tilhørighet.</item>
     </string-array>
     <string name="survey3button1">1 (ikke i det hele tatt)</string>
     <string name="survey3button5">5 (i veldig stor grad)</string>

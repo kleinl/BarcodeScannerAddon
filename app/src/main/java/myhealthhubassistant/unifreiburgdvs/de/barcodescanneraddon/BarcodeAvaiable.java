@@ -12,20 +12,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 import myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.json.BarcodeItem;
 import myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.json.BarcodeItemToJson;
@@ -44,8 +37,8 @@ public class BarcodeAvaiable extends AppCompatActivity {
     private String lat;
     private String barcode;
     private String barcodeName;
-    private EditText editName;
     private ProgressBar bar;
+    private TextView textView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,11 +54,30 @@ public class BarcodeAvaiable extends AppCompatActivity {
         barcode = "-";
         barcodeName = "-";
         setContentView(R.layout.barcode_avaiable);
-        editName = (EditText) findViewById(R.id.edit_name);
-        final Button save = (Button) findViewById(R.id.save_btn);
         bar = (ProgressBar) findViewById(R.id.progressBar);
+        textView = (TextView) findViewById(R.id.textViewLocation);
         bar.setVisibility(View.INVISIBLE);
-        SingleShotLocationProvider.requestSingleUpdate(this,
+        Button save = (Button) findViewById(R.id.save_btn);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                save();
+            }
+        });
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle(getString(R.string.barcode_avaiable));
+        alert.setPositiveButton(getString(R.string.barcode_avaiable_yes), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                startScanning();
+            }
+        });
+        alert.setNegativeButton(getString(R.string.barcode_avaiable_no), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+            }
+        });
+        alert.show();
+        SingleShotLocationProvider.requestSingleUpdate(getApplicationContext(),
                 new SingleShotLocationProvider.LocationCallback() {
                     @Override
                     public void onNewLocationAvailable(SingleShotLocationProvider.GPSCoordinates location) {
@@ -73,26 +85,8 @@ public class BarcodeAvaiable extends AppCompatActivity {
                         lng = String.valueOf(location.longitude);
                     }
                 });
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                barcodeName = editName.getText().toString();
-                save();
-            }
-        });
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Barcode Avaiable?");
-        alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                startScanning();
-            }
-        });
-        alert.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                save();
-            }
-        });
-        alert.show();
+        MyTask task = new MyTask();
+        task.execute();
     }
 
     private void startScanning () {
@@ -106,12 +100,6 @@ public class BarcodeAvaiable extends AppCompatActivity {
             // result of scan bar code
             if (resultCode == Activity.RESULT_OK) {
                 barcode = intent.getStringExtra("SCAN_RESULT");
-                if (isOnline()) {
-                    MyTask task = new MyTask();
-                    task.execute();
-                } else {
-                  save();
-                }
             }
         }
     }
@@ -145,11 +133,17 @@ public class BarcodeAvaiable extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             bar.setVisibility(View.VISIBLE);
+            textView.setVisibility(View.VISIBLE);
         }
 
         @Override
         protected String doInBackground(String... params) {
-            HttpURLConnection urlConnection = null;
+            while (lat.equals("-")) {
+
+            }
+
+
+  /*          HttpURLConnection urlConnection = null;
             URL url;
             String[] data = new String[19];
             for (int i = 0; i < 19; i++) {
@@ -205,12 +199,17 @@ public class BarcodeAvaiable extends AppCompatActivity {
                 return data[errorLine + 5].split("=")[1];
             }
             return name;
+            */
+            return "A";
         }
 
         @Override
         protected void onPostExecute(String result) {
+            /*
             editName.setText(result);
+            */
             bar.setVisibility(View.INVISIBLE);
+            textView.setVisibility(View.INVISIBLE);
         }
     }
 }

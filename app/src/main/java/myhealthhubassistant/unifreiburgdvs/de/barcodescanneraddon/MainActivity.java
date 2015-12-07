@@ -107,19 +107,26 @@ public class MainActivity extends AppCompatActivity {
             calendars[i] = Calendar.getInstance();
             calendars[i].setTimeInMillis(System.currentTimeMillis());
             switch(i) {
-                case 0: calendars[i].set(Calendar.HOUR_OF_DAY, 8);
+                case 0: calendars[i].set(Calendar.HOUR_OF_DAY, 9);
+                        calendars[i].set(Calendar.MINUTE, 0);
                     break;
                 case 1: calendars[i].set(Calendar.HOUR_OF_DAY, 10);
+                        calendars[i].set(Calendar.MINUTE, 30);
                     break;
                 case 2: calendars[i].set(Calendar.HOUR_OF_DAY, 12);
+                        calendars[i].set(Calendar.MINUTE, 0);
                     break;
-                case 3: calendars[i].set(Calendar.HOUR_OF_DAY, 14);
+                case 3: calendars[i].set(Calendar.HOUR_OF_DAY, 13);
+                        calendars[i].set(Calendar.MINUTE, 30);
                     break;
-                case 4: calendars[i].set(Calendar.HOUR_OF_DAY, 16);
+                case 4: calendars[i].set(Calendar.HOUR_OF_DAY, 15);
+                        calendars[i].set(Calendar.MINUTE, 0);
                     break;
-                case 5: calendars[i].set(Calendar.HOUR_OF_DAY, 18);
+                case 5: calendars[i].set(Calendar.HOUR_OF_DAY, 16);
+                        calendars[i].set(Calendar.MINUTE, 30);
                     break;
-                case 6: calendars[i].set(Calendar.HOUR_OF_DAY, 20);
+                case 6: calendars[i].set(Calendar.HOUR_OF_DAY, 18);
+                        calendars[i].set(Calendar.MINUTE, 0);
                     break;
             }
             if (first) {
@@ -128,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
             intents[i] = new Intent(c.getApplicationContext(), AlarmReceiver.class);
             intents[i].putExtra("time", i);
             intents[i].putExtra("usage", "create");
+            intents[i].setAction("actionstring" + System.currentTimeMillis() * i);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(c.getApplicationContext(), i, intents[i], PendingIntent.FLAG_UPDATE_CURRENT);
             alarmManager.cancel(pendingIntent);
             alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendars[i].getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);

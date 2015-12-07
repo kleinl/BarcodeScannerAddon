@@ -1,12 +1,12 @@
 package myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon;
 
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
@@ -66,6 +66,8 @@ public class Survey extends AppCompatActivity {
         question6Right = res.getStringArray(R.array.survey6right);
         int survey = getIntent().getIntExtra("survey", -1);
         time = getIntent().getIntExtra("time", -1);
+        Log.e("testsurvey", String.valueOf(survey));
+        Log.e("testtime", String.valueOf(time));
 
         question = (TextView) findViewById(R.id.question);
         decicion = (RadioGroup) findViewById(R.id.radioGroup);
@@ -83,6 +85,10 @@ public class Survey extends AppCompatActivity {
         Button next = (Button) findViewById(R.id.nextQuestionButton);
         next.setVisibility(View.GONE);
 
+        Intent newIntent = new Intent(Survey.this, AlarmReceiver.class);
+        newIntent.putExtra("time", this.time);
+        newIntent.putExtra("usage", "delete");
+        sendBroadcast(newIntent);
 
         listener = new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -304,17 +310,8 @@ public class Survey extends AppCompatActivity {
             if (surveyNumber < 5) {
                 Intent intent1 = new Intent(Survey.this, Survey.class);
                 intent1.putExtra("survey", surveyNumber + 1);
+                intent1.putExtra("time", this.time);
                 startActivity(intent1);
-            } else {
-                Intent newIntent = new Intent(Survey.this, AlarmReceiver.class);
-                newIntent.putExtra("time", this.time);
-                newIntent.putExtra("usage", "delete");
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(this, (int) System.currentTimeMillis(), newIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-                try {
-                    pendingIntent.send();
-                } catch (PendingIntent.CanceledException e) {
-                    e.printStackTrace();
-                }
             }
             finish();
         } catch (JSONException e) {

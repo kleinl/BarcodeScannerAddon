@@ -23,8 +23,17 @@
     <string name="ssb3">Sport drinks</string>
     <string name="ssb4">Energy drinks</string>
 
+    <!-- List Items without ssb -->
+    <string name="nossb1">Milk and milk beverages</string>
+    <string name="nossb2">Coffee, Tea</string>
+
     <!-- List Activity -->
     <string name="more_drinks">Other drinks</string>
+
+    <!-- Barcode Avaiable Activity -->
+    <string name="barcode_avaiable">Barcode avaiable?</string>
+    <string name="barcode_avaiable_yes">Yes</string>
+    <string name="barcode_avaiable_no">No</string>
 
     <!-- Surveys -->
     <string name="survey">Survey </string>
