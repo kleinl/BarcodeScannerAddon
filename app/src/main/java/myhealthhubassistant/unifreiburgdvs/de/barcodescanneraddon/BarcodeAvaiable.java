@@ -119,13 +119,6 @@ public class BarcodeAvaiable extends AppCompatActivity {
         }
     }
 
-    public boolean isOnline() {
-        ConnectivityManager cm =
-                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-        return netInfo != null && netInfo.isConnectedOrConnecting();
-    }
-
     private class MyTask extends AsyncTask<String, String, String> {
         public MyTask() {
         }
@@ -141,73 +134,11 @@ public class BarcodeAvaiable extends AppCompatActivity {
             while (lat.equals("-")) {
 
             }
-
-
-  /*          HttpURLConnection urlConnection = null;
-            URL url;
-            String[] data = new String[19];
-            for (int i = 0; i < 19; i++) {
-                data[i] = "";
-
-            }
-            int errorLine = 0;
-            InputStream inStream = null;
-            StringBuilder sb = new StringBuilder();
-            sb.append("http://opengtindb.org/?ean=");
-            sb.append(barcode);
-            sb.append("&cmd=query&queryid=477909028");
-            try {
-                url = new URL(sb.toString());
-                urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("GET");
-                urlConnection.setDoOutput(true);
-                urlConnection.setDoInput(true);
-                urlConnection.connect();
-                inStream = urlConnection.getInputStream();
-                BufferedReader bReader = new BufferedReader(new InputStreamReader(inStream));
-                String temp;
-                int i = 0;
-                while ((temp = bReader.readLine()) != null) {
-                    if (temp.contains("error")) {
-                        errorLine = i;
-                    }
-                    data[i] = temp;
-                    i++;
-                }
-                if (errorLine == 0) {
-                    return "";
-                }
-            } catch (Exception e) {
-
-            } finally {
-                if (inStream != null) {
-                    try {
-                        // this will close the bReader as well
-                        inStream.close();
-                    } catch (IOException ignored) {
-                    }
-                }
-                if (urlConnection != null) {
-                    urlConnection.disconnect();
-                }
-            }
-            if (!data[errorLine].split("=")[1].equals("0")) {
-                return "";
-            }
-            String name = data[errorLine + 4].split("=")[1];
-            if (name.equals("")) {
-                return data[errorLine + 5].split("=")[1];
-            }
-            return name;
-            */
             return "A";
         }
 
         @Override
         protected void onPostExecute(String result) {
-            /*
-            editName.setText(result);
-            */
             bar.setVisibility(View.INVISIBLE);
             textView.setVisibility(View.INVISIBLE);
         }
