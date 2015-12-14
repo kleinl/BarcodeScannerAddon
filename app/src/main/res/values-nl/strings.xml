@@ -23,10 +23,6 @@
     <string name="ssb3">Sport dranken</string>
     <string name="ssb4">Energie drankjes</string>
 
-    <!-- List Items without ssb -->
-    <string name="nossb1">Melk en zuiveldranken</string>
-    <string name="nossb2">Koffie, Thee</string>
-
     <!-- List Activity -->
     <string name="more_drinks">andere dranken</string>
 

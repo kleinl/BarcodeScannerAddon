@@ -15,7 +15,7 @@
         <item>bijv. zwarte koffie, koffie verkeerd, zwarte thee, groene thee, rooibos thee</item>
         <item>bijv. kraanwater, water uit fles</item>
         <item>bijv. bier, wijn</item>
-        <item>-</item>
+        <item>bijv. frisdrank, sap, energie drankjes</item>
     </string-array>
 
     <!-- List 2 -->
@@ -33,13 +33,13 @@
 
     <string-array name="examples2">
         <item>bijv. Coca Cola, Fanta, bitter lemon</item>
-        <item>bijv. Taksi, Wicky, DubbelFrisss, Ice tea</item>
+        <item>bijv. Taksi, Wicky, aanmaaksiroop, nectar/dubbeldrank</item>
         <item>bijv. Aquarius, AA Drink</item>
         <item>bijv. Redbull, Bullit, Monster</item>
         <item>bijv. Coca Cola light, Pepsi Max</item>
         <item>bijv. Ice tea zero, Crystal Clear suikervrij</item>
         <item>bijv. Innocent Smoothie, Smaakt Smoothie</item>
-        <item>bijv. 100% sap, bijv. appelsap, sinaasappelsap</item>
+        <item>100% fruit uit pak of versgeperst: bijv. appelsap, sinaasappelsap</item>
         <item>bijv. wortelsap, tomatensap</item>
     </string-array>
 </resources>

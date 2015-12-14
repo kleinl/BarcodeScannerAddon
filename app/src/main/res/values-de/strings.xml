@@ -23,10 +23,6 @@
     <string name="ssb3">Sportgetränk</string>
     <string name="ssb4">Energy-Drinks</string>
 
-    <!-- List Items without ssb -->
-    <string name="nossb1">Milch und Milchgetränke</string>
-    <string name="nossb2">Kaffe, Tee</string>
-
     <!-- List Activity -->
     <string name="more_drinks">Sonstige Getränke</string>
 

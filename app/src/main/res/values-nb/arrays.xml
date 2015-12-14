@@ -15,7 +15,7 @@
         <item>F.eks. Svart kaffe, Caffe Latte, Americano, Svart te, Grønn te, Chai Te</item>
         <item>F.eks. Springvann, Flaskevann</item>
         <item>F.eks. Øl, Rusbrus, Vin, Brennevin</item>
-        <item>-</item>
+        <item>F.eks. Brus, Juice, Energidrikk</item>
     </string-array>
 
     <!-- List 2 -->
@@ -39,7 +39,7 @@
         <item>F.eks. Coca Cola light, Pepsi Max, Solo Super</item>
         <item>F.eks. Fun light, Nestea light</item>
         <item>F.eks. Bendit, Hjemmelaget smoothie</item>
-        <item>F.eks. 100% juice, f.eks. Eplejuice, Appelsinjuice</item>
+        <item>100% juice (F.eks. Eplejuice, Appelsinjuice)</item>
         <item>F.eks. Gulrotjuice, Rødbetjuice</item>
     </string-array>
 </resources>

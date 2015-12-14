@@ -76,9 +76,6 @@ public class Item extends AppCompatActivity {
                 name.equals(getResources().getString(R.string.ssb3)) ||
                 name.equals(getResources().getString(R.string.ssb4))) {
             ssb = "1";
-        } else if (name.equals(getResources().getString(R.string.nossb1)) ||
-                name.equals(getResources().getString(R.string.nossb2))) {
-            ssb = "0";
         } else {
             ssb = "-";
         }
