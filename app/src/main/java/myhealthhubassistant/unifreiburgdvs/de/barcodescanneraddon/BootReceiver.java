@@ -18,8 +18,11 @@ public class BootReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         prefs = context.getSharedPreferences(
                 "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
-        String startDate = prefs.getString("STARTTIME", "");
-        if (!startDate.equals(Calendar.DATE)) {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.DATE, cal.get(Calendar.DATE));
+        cal.set(Calendar.HOUR, 0);
+        Long startDate = prefs.getLong("STARTTIME", 0);
+        if (startDate < cal.getTimeInMillis()) {
             MainActivity.alarmForSurvey(context, false);
         }
     }

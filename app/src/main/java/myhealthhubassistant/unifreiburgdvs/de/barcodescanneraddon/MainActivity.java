@@ -84,10 +84,12 @@ public class MainActivity extends AppCompatActivity {
                 Calendar cal = Calendar.getInstance();
                 cal.set(Calendar.DATE, cal.get(Calendar.DATE) + 1);
                 cal.set(Calendar.HOUR, 0);
+                Calendar cal2 = Calendar.getInstance();
+                cal2.set(Calendar.HOUR, 0);
                 long time  = cal.getTimeInMillis();
                 time = time + TimeUnit.DAYS.toMillis(input2.getValue());
                 prefs.edit().putLong("STOPTIME", time).apply();
-                prefs.edit().putLong("STARTTIME", Calendar.DATE).apply();
+                prefs.edit().putLong("STARTTIME", cal2.getTimeInMillis()).apply();
                 finish();
             }
         });
