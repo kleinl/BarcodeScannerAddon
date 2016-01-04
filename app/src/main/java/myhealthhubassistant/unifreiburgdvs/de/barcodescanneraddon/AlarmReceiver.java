@@ -70,6 +70,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 case 6:
                     hour = 18;
                     minute = r.nextInt(60);
+                    break;
             }
             intentNew.putExtra("time", time);
             intentNew.setAction(String.valueOf(time));
