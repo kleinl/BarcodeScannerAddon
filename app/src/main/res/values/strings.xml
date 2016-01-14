@@ -111,5 +111,6 @@
         <item>tense</item>
     </string-array>
 
+    <string name="action_settings">Settings</string>
 
 </resources>

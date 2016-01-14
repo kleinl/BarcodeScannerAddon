@@ -294,7 +294,7 @@ public class Survey extends AppCompatActivity {
         String date;
         String time;
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd:MM:yyyy", Locale.getDefault());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
         date = sdf.format(c.getTime());
         SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
         time = sdf2.format(c.getTime());
