@@ -1,0 +1,116 @@
+<resources>
+    <string name="app_name">BarcodeScannerAddon</string>
+
+
+    <!-- Button Names -->
+    <string name="start_survey">Start Survey</string>
+
+    <!-- New Drink Activity -->
+    <string name="new_item_by_barcode">New Item By Barcode</string>
+    <string name="new_item_by_list">New Item By List</string>
+
+
+    <!-- Item Activity -->
+    <string name="button_save">Save</string>
+    <string name="edit_text_amount">glasses (200 ml):</string>
+    <string name="edit_text_name">name:</string>
+    <string name="button_plus">+</string>
+    <string name="button_minus">-</string>
+    <string name="forgot_name">Please enter name!</string>
+    <!-- List Items with ssb -->
+    <string name="ssb1">Sugar sweetened carbonated drinks</string>
+    <string name="ssb2">Other sugar sweetened drinks</string>
+    <string name="ssb3">Sport drinks</string>
+    <string name="ssb4">Energy drinks</string>
+
+    <!-- List Activity -->
+    <string name="more_drinks">Other drinks</string>
+
+    <!-- Barcode Avaiable Activity -->
+    <string name="barcode_avaiable">Barcode avaiable?</string>
+    <string name="barcode_avaiable_yes">Yes</string>
+    <string name="barcode_avaiable_no">No</string>
+
+    <!-- Surveys -->
+    <string name="survey">Survey </string>
+    <string name="acc">have you put on the accelerometer?</string>
+
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="next">next</string>
+
+    <string name="survey1button1">1 (not at all)</string>
+    <string name="survey1button7">7 (very much)</string>
+    <string-array name="survey1">
+        <item>I need something pleasant to make me feel better.</item>
+        <item>I feel drained.</item>
+        <item>If I were tempted by something right now, it would be very difficult to resist.</item>
+        <item>I would want to quit any difficult task I was given.</item>
+        <item>I feel calm and rational.</item>
+        <item>I cannot absorb any information right now.</item>
+        <item>I feel lazy.</item>
+        <item>I feel sharp and focused.</item>
+        <item>I want to give up.</item>
+        <item>I feel like my willpower is gone.</item>
+    </string-array>
+    <string name="survey2button1">1 (strongly disagree)</string>
+    <string name="survey2button5">5 (strongly agree)</string>
+    <string-array name="survey2">
+        <item>Since your last reply: I had a strong need to belong.</item>
+        <item>At this particular moment I have a strong need to belong.</item>
+    </string-array>
+    <string name="survey3button1">1 (strongly disagree)</string>
+    <string name="survey3button5">5 (strongly agree)</string>
+    <string-array name="survey3">
+        <item>At this particular moment I identify with/feel a connection to my fellow university students/friends/family.</item>
+        <item>Since your last reply: I have identified with/felt a connection to my fellow university students/friends/family.</item>
+    </string-array>
+    <string name="survey4button1">0 (no)</string>
+    <string name="survey4button2">1 (yes)</string>
+    <string-array name="survey4">
+        <item>Are other people present?</item>
+        <item>Since your last reply: Were other people present?</item>
+        <item>Are other physically present people drinking soft drinks?</item>
+        <item>Since your last reply: Were other physically present people drinking soft drinks?</item>
+        <item>Are other people present in some other medium (e.g., TV, radio, on the internet) drinking soft drinks?</item>
+        <item>Since your last reply: Were other people present in some other medium (e.g. TV, radio, on the internet) drinking soft drinks?</item>
+
+    </string-array>
+    <string-array name="survey5">
+        <item>Since your last reply: How long did you watch TV and/or video/DVD/Blue-ray or video streaming services (e.g. Netflix)?</item>
+        <item>Since your last reply: How long did you use the internet? (Please disregard the time spent video and music streaming only.)</item>
+        <item>Since your last reply: How long did you sit at a computer/game console?</item>
+        <item>Since your last reply: How long did you actively play on a game console (e.g. Wii, PlayStation Move)?</item>
+        <item>Since your last reply: How long did you sit/work at a computer? (Please disregard the time spent with internet-use or video or music streaming only.)</item>
+        <item>Since your last reply: How much time did you spend on text messaging only?</item>
+        <item>Since your last reply: How long did you listen to music on your radio/mobile/streaming service only? (Please disregard the time spent while using the internet or the computer.) </item>
+    </string-array>
+
+    <string name="survey6title">How do you feel at the moment?</string>
+
+
+    <string-array name="survey6left">
+        <item>tired</item>
+        <item>content</item>
+        <item>agitated</item>
+        <item>full of energy</item>
+        <item>unwell</item>
+        <item>relaxed</item>
+    </string-array>
+    <string-array name="survey6right">
+        <item>awake</item>
+        <item>discontent</item>
+        <item>calm</item>
+        <item>without energy</item>
+        <item>well</item>
+        <item>tense</item>
+    </string-array>
+
+    <string name="action_settings">Settings</string>
+
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- List Activity -->
+    <!-- List 1 -->
+    <string-array name="list1">
+        <item>Milch und Milchgetränke</item>
+        <item>Kaffe, Tee</item>
+        <item>Wasser</item>
+        <item>Alkohol</item>
+        <item>Sonstige Getränke</item>
+    </string-array>
+
+    <string-array name="examples1">
+        <item>z.B. Milch, Buttermilch, Schokoladenmilch, Joghurtdrinks</item>
+        <item>z.B. schwarzer Kaffee, Cappuccino, Latte Macchiato, Schwarzer Tee, Grüner Tee, Chai Tee</item>
+        <item>z.B. Leitungswasser, Mineralwasser</item>
+        <item>z.B. Bier, Wein, Alcopops, Schnaps</item>
+        <item>z.B. Cola, Energy Drinks, Saft</item>
+    </string-array>
+
+    <!-- List 2 -->
+    <string-array name="list2">
+        <item>Gesüßtes, kohlensäurehaltiges Getränk</item>
+        <item>Anderes gesüßtes Getränk</item>
+        <item>Sportgetränk</item>
+        <item>Energy-Drinks</item>
+        <item>Kohlensäurehaltige Lightgetränke</item>
+        <item>Andere Lightgetränke</item>
+        <item>Smoothie</item>
+        <item>Fruchtsaft</item>
+        <item>Gemüsesaft</item>
+    </string-array>
+
+    <string-array name="examples2">
+        <item>z.B. Coca Cola, Fanta</item>
+        <item>z.B. Caprisonne, Durstlöscher, Nestea</item>
+        <item>z.B. Gatorade, Powerade, Isostar, Active O2</item>
+        <item>z.B. Red Bull, Monster, Rockstar</item>
+        <item>z.B. Coca Cola Light &amp; Zero, Pepsi Light</item>
+        <item>z.B. Nestea Light</item>
+        <item>z.B. trué fruits, innocent, Rewe Smoothie</item>
+        <item>z.B. 100 % Saft, z.B. Apfelsaft, Orangensaft</item>
+        <item>z.B. Karottensaft, Rotebeetesaft, Tomatensaft</item>
+    </string-array>
+</resources>

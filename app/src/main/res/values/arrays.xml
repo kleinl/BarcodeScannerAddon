@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- List Activity -->
+    <!-- List 1 -->
+    <string-array name="list1">
+        <item>Milk and milk beverages</item>
+        <item>Coffee, Tea</item>
+        <item>Water</item>
+        <item>Alkohol</item>
+        <item>Other drinks</item>
+    </string-array>
+
+    <string-array name="examples1">
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+    </string-array>
+
+    <!-- List 2 -->
+    <string-array name="list2">
+        <item>Sugar sweetened carbonated drinks</item>
+        <item>Other sugar sweetened drinks</item>
+        <item>Sport drinks</item>
+        <item>Energy drinks</item>
+        <item>Diet carbonated drinks</item>
+        <item>Other diet drinks</item>
+        <item>Smoothies</item>
+        <item>Fruit juice</item>
+        <item>Vegetable juice</item>
+    </string-array>
+
+    <string-array name="examples2">
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+    </string-array>
+</resources>

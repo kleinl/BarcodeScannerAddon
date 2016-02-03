@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- List Activity -->
+    <!-- List 1 -->
+    <string-array name="list1">
+        <item>Melk og melkebaserte drikker</item>
+        <item>Kaffe, Te</item>
+        <item>Vann</item>
+        <item>Alkohol</item>
+        <item>Andre drikker</item>
+    </string-array>
+
+    <string-array name="examples1">
+        <item>F.eks. Lettmelk, Sjokolademelk, Biola</item>
+        <item>F.eks. Svart kaffe, Caffe Latte, Americano, Svart te, Grønn te, Chai Te</item>
+        <item>F.eks. Springvann, Flaskevann</item>
+        <item>F.eks. Øl, Rusbrus, Vin, Brennevin</item>
+        <item>F.eks. Brus, Juice, Energidrikk</item>
+    </string-array>
+
+    <!-- List 2 -->
+    <string-array name="list2">
+        <item>Sukkerholdig brus</item>
+        <item>Annen sukkerholdig drikke</item>
+        <item>Sportsdrikk</item>
+        <item>Energidrikk</item>
+        <item>Sukkerfri brus</item>
+        <item>Annen sukkerfri drikke</item>
+        <item>Smoothie</item>
+        <item>Fruktjuice</item>
+        <item>Grønnsaksjuice</item>
+    </string-array>
+
+    <string-array name="examples2">
+        <item>F.eks. Coca Cola, Solo</item>
+        <item>F.eks. Saft, Kuli, Solrik, Nestea</item>
+        <item>F.eks. Gatorade, Powerade, Maxim</item>
+        <item>F.eks. Redbull, Burn, Battery</item>
+        <item>F.eks. Coca Cola light, Pepsi Max, Solo Super</item>
+        <item>F.eks. Fun light, Nestea light</item>
+        <item>F.eks. Bendit, Hjemmelaget smoothie</item>
+        <item>100% juice (F.eks. Eplejuice, Appelsinjuice)</item>
+        <item>F.eks. Gulrotjuice, Rødbetjuice</item>
+    </string-array>
+</resources>

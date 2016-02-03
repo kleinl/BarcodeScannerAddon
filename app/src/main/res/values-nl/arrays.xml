@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- List Activity -->
+    <!-- List 1 -->
+    <string-array name="list1">
+        <item>Melk en zuiveldranken</item>
+        <item>Koffie, Thee</item>
+        <item>Water</item>
+        <item>Alcohol</item>
+        <item>andere dranken</item>
+    </string-array>
+
+    <string-array name="examples1">
+        <item>bijv. halfvolle melk, chocolademelk, Fristi</item>
+        <item>bijv. zwarte koffie, koffie verkeerd, zwarte thee, groene thee, rooibos thee</item>
+        <item>bijv. kraanwater, water uit fles</item>
+        <item>bijv. bier, wijn</item>
+        <item>bijv. frisdrank, sap, energie drankjes</item>
+    </string-array>
+
+    <!-- List 2 -->
+    <string-array name="list2">
+        <item>Suiker- en koolzuurhoudende drankjes</item>
+        <item>Andere suikerhoudende drankjes</item>
+        <item>Sport dranken</item>
+        <item>Energie drankjes</item>
+        <item>Koolzuurhoudende light drankjes</item>
+        <item>Andere light drankjes</item>
+        <item>Smoothies</item>
+        <item>Vruchtensap</item>
+        <item>Groentesap</item>
+    </string-array>
+
+    <string-array name="examples2">
+        <item>bijv. Coca Cola, Fanta, bitter lemon</item>
+        <item>bijv. Taksi, Wicky, aanmaaksiroop, nectar/dubbeldrank</item>
+        <item>bijv. Aquarius, AA Drink</item>
+        <item>bijv. Redbull, Bullit, Monster</item>
+        <item>bijv. Coca Cola light, Pepsi Max</item>
+        <item>bijv. Ice tea zero, Crystal Clear suikervrij</item>
+        <item>bijv. Innocent Smoothie, Smaakt Smoothie</item>
+        <item>100% fruit uit pak of versgeperst: bijv. appelsap, sinaasappelsap</item>
+        <item>bijv. wortelsap, tomatensap</item>
+    </string-array>
+</resources>
