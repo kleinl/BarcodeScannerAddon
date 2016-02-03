@@ -66,8 +66,6 @@ public class Survey extends AppCompatActivity {
         question6Right = res.getStringArray(R.array.survey6right);
         int survey = getIntent().getIntExtra("survey", -1);
         time = getIntent().getIntExtra("time", -1);
-        Log.e("testsurvey", String.valueOf(survey));
-        Log.e("testtime", String.valueOf(time));
 
         question = (TextView) findViewById(R.id.question);
         decicion = (RadioGroup) findViewById(R.id.radioGroup);
@@ -306,6 +304,7 @@ public class Survey extends AppCompatActivity {
             key = SurveyItemToJson.getJSONfromSurvey(surveyItem);
             Intent intent = new Intent(Survey.this, Connection.class);
             intent.putExtra("json", key.toString());
+            intent.putExtra("surveyNr", surveyNumber);
             startActivity(intent);
             if (surveyNumber < 5) {
                 Intent intent1 = new Intent(Survey.this, Survey.class);

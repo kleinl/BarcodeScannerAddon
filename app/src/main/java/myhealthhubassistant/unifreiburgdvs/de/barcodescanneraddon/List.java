@@ -60,4 +60,10 @@ public class List extends ListActivity {
             finish();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        MainActivity.self.finish();
+    }
 }

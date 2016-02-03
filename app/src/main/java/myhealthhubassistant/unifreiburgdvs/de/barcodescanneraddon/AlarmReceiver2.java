@@ -30,7 +30,7 @@ public class AlarmReceiver2 extends BroadcastReceiver {
         mNM = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
         int time = intent.getIntExtra("time", -1);
         if (counter != 0 && preferences.getLong("STOPTIME", 0) > cal.getTimeInMillis()) {
-            Intent openSurvey = new Intent(context, Survey.class);
+            Intent openSurvey = new Intent(context, MainActivity.class);
             openSurvey.putExtra("time", time);
             openSurvey.putExtra("survey", 0);
             PendingIntent pIntent = PendingIntent.getActivity(context, 0, openSurvey, PendingIntent.FLAG_UPDATE_CURRENT);

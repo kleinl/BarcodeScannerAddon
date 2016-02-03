@@ -143,4 +143,10 @@ public class BarcodeAvaiable extends AppCompatActivity {
             textView.setVisibility(View.INVISIBLE);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        MainActivity.self.finish();
+    }
 }
