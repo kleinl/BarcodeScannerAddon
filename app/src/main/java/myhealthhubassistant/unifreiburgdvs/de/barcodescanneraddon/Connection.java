@@ -18,39 +18,26 @@ import org.json.JSONObject;
  * Created by lukas on 10.11.15.
  */
 public class Connection extends AppCompatActivity {
-<<<<<<< HEAD
-
-    public CommBroadcastReceiver commUnit;
-
-=======
     private Intent myHealthHubIntent;
     private ProgressDialog progressDialog;
     private boolean isConnectedToMhh;
     public CommBroadcastReceiver commUnit;
 
 
->>>>>>> refs/remotes/origin/master
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         commUnit = new CommBroadcastReceiver(this.getApplicationContext());
-<<<<<<< HEAD
-=======
         connectToMhh();
->>>>>>> refs/remotes/origin/master
         try {
             JSONObject obj = new JSONObject(getIntent().getStringExtra("json"));
             commUnit.storeEntry(obj);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-<<<<<<< HEAD
         super.finish();
     }
-=======
-        disconnectMHH();
-        super.finish();
-    }
+
 
     /**
      * Service connection to myHealthHub remote service. This connection is
@@ -64,7 +51,6 @@ public class Connection extends AppCompatActivity {
                     "Connected to myHealthAssistant", Toast.LENGTH_SHORT)
                     .show();
             isConnectedToMhh = true;
-
             if (progressDialog != null) {
                 progressDialog.dismiss();
             }
@@ -114,5 +100,4 @@ public class Connection extends AppCompatActivity {
         super.onDestroy();
         disconnectMHH();
     }
->>>>>>> refs/remotes/origin/master
 }

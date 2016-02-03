@@ -21,10 +21,6 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/master
         <activity
             android:name=".NewDrink">
             <intent-filter>
@@ -75,7 +71,6 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
         <activity android:name=".Reset">
             <intent-filter>
                 <action android:name="myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.RESET" />
@@ -83,8 +78,6 @@
             </intent-filter>
         </activity>
 
-=======
->>>>>>> refs/remotes/origin/master
         <receiver android:name=".AlarmReceiver"
             android:enabled="true">
             <intent-filter>
