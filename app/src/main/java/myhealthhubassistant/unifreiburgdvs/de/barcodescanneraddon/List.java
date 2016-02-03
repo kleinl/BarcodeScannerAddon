@@ -4,8 +4,11 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.view.Menu;
 import android.view.MenuInflater;
+=======
+>>>>>>> refs/remotes/origin/master
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;

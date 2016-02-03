@@ -3,6 +3,7 @@ package myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
+<<<<<<< HEAD
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,6 +12,13 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.IBinder;
+=======
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+>>>>>>> refs/remotes/origin/master
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,13 +26,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
+<<<<<<< HEAD
 import android.widget.Toast;
+=======
+>>>>>>> refs/remotes/origin/master
 
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
+<<<<<<< HEAD
     private Intent myHealthHubIntent;
     private boolean isConnectedToMhh;
     private SharedPreferences prefs;
@@ -36,6 +48,25 @@ public class MainActivity extends AppCompatActivity {
                 "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
         String userId = prefs.getString("ID", "");
         connectToMhh();
+=======
+    private SharedPreferences prefs;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+        prefs = this.getSharedPreferences(
+                "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
+        String userId = prefs.getString("ID", "");
+>>>>>>> refs/remotes/origin/master
         // Check if survey has started yet.
         if (userId.isEmpty()) {
             setContentView(R.layout.activity_main);
@@ -53,12 +84,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+<<<<<<< HEAD
     @Override
     public void onDestroy() {
         super.onDestroy();
         disconnectMHH();
     }
 
+=======
+>>>>>>> refs/remotes/origin/master
     private void startSurvey() {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         final AlertDialog.Builder alert2 = new AlertDialog.Builder(this);
@@ -113,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+<<<<<<< HEAD
     public static void cancelAlarm(Context c) {
         AlarmManager alarmManager = (AlarmManager) c.getSystemService(Context.ALARM_SERVICE);
         Calendar[] calendars = new Calendar[7];
@@ -152,6 +187,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+=======
+>>>>>>> refs/remotes/origin/master
     // Notification for survey
     public static void alarmForSurvey(Context c, boolean first) {
         AlarmManager alarmManager = (AlarmManager) c.getSystemService(Context.ALARM_SERVICE);
@@ -195,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
             alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendars[i].getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
         }
     }
+<<<<<<< HEAD
     /**
      * Service connection to myHealthHub remote service. This connection is
      * needed in order to start myHealthHub. Furthermore, it is used inform the
@@ -239,4 +277,6 @@ public class MainActivity extends AppCompatActivity {
         if (myHealthHubIntent != null)
             this.getApplicationContext().stopService(myHealthHubIntent);
     }
+=======
+>>>>>>> refs/remotes/origin/master
 }
