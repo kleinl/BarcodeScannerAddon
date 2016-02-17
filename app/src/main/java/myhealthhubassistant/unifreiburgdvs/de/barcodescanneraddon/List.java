@@ -4,8 +4,6 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -16,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * Class to show the list of beverages.
  * Created by lukas on 10.11.15.
  */
 public class List extends ListActivity {
@@ -27,8 +26,8 @@ public class List extends ListActivity {
         super.onCreate(savedInstanceState);
         values = getResources().getStringArray(R.array.list1);
         examples = getResources().getStringArray(R.array.examples1);
-        final java.util.List<String> list = new ArrayList<String>(Arrays.asList(values));
-        ArrayAdapter adapter = new ArrayAdapter (this, android.R.layout.simple_list_item_2, android.R.id.text1, list) {
+        final java.util.List<String> list = new ArrayList<>(Arrays.asList(values));
+        ArrayAdapter<String> adapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_2, android.R.id.text1, list) {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {

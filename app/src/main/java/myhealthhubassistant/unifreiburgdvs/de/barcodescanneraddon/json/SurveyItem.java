@@ -9,8 +9,10 @@ public class SurveyItem {
     private String date;
     private String time;
     private int survey;
+    private int day;
+    private int signal;
     private int[] values;
-    public SurveyItem(String kind, String id, String date, String time, int survey, int[] values) {
+    public SurveyItem(String kind, String id, String date, String time, int survey, int day, int signal, int[] values) {
         this.kind = kind;
         this.id = id;
         this.date = date;
@@ -18,6 +20,8 @@ public class SurveyItem {
         this.survey = survey;
         this.values = new int[values.length];
         this.values = values;
+        this.day = day;
+        this.signal = signal;
     }
 
     public String getTime() {
@@ -43,4 +47,8 @@ public class SurveyItem {
     public String getDate() {
         return date;
     }
+
+    public int getDay() { return day; }
+
+    public int getSignal() { return signal; }
 }

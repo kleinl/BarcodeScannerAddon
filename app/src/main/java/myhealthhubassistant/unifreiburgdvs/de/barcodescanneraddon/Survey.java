@@ -47,6 +47,8 @@ public class Survey extends AppCompatActivity {
     private NumberPicker minutePicker;
     private SharedPreferences prefs;
     private int time;
+    private int day;
+    private int signal;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,9 @@ public class Survey extends AppCompatActivity {
         question6Right = res.getStringArray(R.array.survey6right);
         int survey = getIntent().getIntExtra("survey", -1);
         time = getIntent().getIntExtra("time", -1);
+
+        day = prefs.getInt("SURVEY_DAY", -1);
+        day = prefs.getInt("SURVEY_SIGNAL", -1);
 
         question = (TextView) findViewById(R.id.question);
         decicion = (RadioGroup) findViewById(R.id.radioGroup);
@@ -297,7 +302,7 @@ public class Survey extends AppCompatActivity {
         SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
         time = sdf2.format(c.getTime());
 
-        SurveyItem  surveyItem = new SurveyItem("survey", id, date, time, surveyNumber + 1,
+        SurveyItem  surveyItem = new SurveyItem("survey", id, date, time, surveyNumber + 1, day, signal,
                answer);
         JSONObject key;
         try {
@@ -311,6 +316,13 @@ public class Survey extends AppCompatActivity {
                 intent1.putExtra("survey", surveyNumber + 1);
                 intent1.putExtra("time", this.time);
                 startActivity(intent1);
+            } else {
+                if (signal == 7) {
+                    prefs.edit().putInt("SURVEY_DAY", day + 1).apply();
+                    prefs.edit().putInt("SURVEY_SIGNAL", 1).apply();
+                } else {
+                    prefs.edit().putInt("SURVEY_SIGNAL", signal + 1).apply();
+                }
             }
             finish();
         } catch (JSONException e) {

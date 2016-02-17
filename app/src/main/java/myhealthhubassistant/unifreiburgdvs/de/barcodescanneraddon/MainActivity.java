@@ -13,7 +13,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,14 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences prefs;
     public static CommBroadcastReceiver commUnit;
     public static Activity self;
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
                 time = time + TimeUnit.DAYS.toMillis(input2.getValue());
                 prefs.edit().putLong("STOPTIME", time).apply();
                 prefs.edit().putLong("STARTTIME", cal2.getTimeInMillis()).apply();
+                prefs.edit().putInt("SURVEY_DAY", 1).apply();
+                prefs.edit().putInt("SURVEY_SIGNAL", 1).apply();
                 finish();
             }
         });

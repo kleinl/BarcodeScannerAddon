@@ -18,6 +18,8 @@ public class SurveyItemToJson {
         jsonObj.putOpt("TIME", surveyItem.getTime());
         jsonObj.putOpt("DATE", surveyItem.getDate());
         jsonObj.putOpt("SURVEY", surveyItem.getSurvey());
+        jsonObj.putOpt("DAY", surveyItem.getDay());
+        jsonObj.putOpt("SIGNAL", surveyItem.getSignal());
         JSONArray jsonArray = new JSONArray();
         for (int i = 0; i < surveyItem.getValues().length; i++) {
             jsonArray.put(surveyItem.getValues()[i]);
