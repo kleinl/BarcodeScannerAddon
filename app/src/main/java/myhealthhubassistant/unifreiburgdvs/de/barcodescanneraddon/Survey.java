@@ -49,6 +49,7 @@ public class Survey extends AppCompatActivity {
     private int time;
     private int day;
     private int signal;
+    private boolean missing;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,9 +69,9 @@ public class Survey extends AppCompatActivity {
         question6Right = res.getStringArray(R.array.survey6right);
         int survey = getIntent().getIntExtra("survey", -1);
         time = getIntent().getIntExtra("time", -1);
-
+        missing = getIntent().getBooleanExtra("missing", true);
         day = prefs.getInt("SURVEY_DAY", -1);
-        day = prefs.getInt("SURVEY_SIGNAL", -1);
+        signal = prefs.getInt("SURVEY_SIGNAL", -1);
 
         question = (TextView) findViewById(R.id.question);
         decicion = (RadioGroup) findViewById(R.id.radioGroup);

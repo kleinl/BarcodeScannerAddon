@@ -8,8 +8,8 @@ android {
         applicationId "myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 56
-        versionName "5.6"
+        versionCode 57
+        versionName "5.7"
     }
     buildTypes {
         release {

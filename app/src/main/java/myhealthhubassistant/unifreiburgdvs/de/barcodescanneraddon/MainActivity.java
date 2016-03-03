@@ -18,8 +18,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+
+import myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.json.SurveyItem;
+import myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.json.SurveyItemToJson;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,11 +51,18 @@ public class MainActivity extends AppCompatActivity {
         int survey = getIntent().getIntExtra("survey", -1);
         if ((survey) != -1) {
             int time = getIntent().getIntExtra("time", -1);
-            Intent openSurvey = new Intent(this, Survey.class);
-            openSurvey.putExtra("time", time);
-            openSurvey.putExtra("survey", survey);
-            openSurvey.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-            startActivity(openSurvey);
+            boolean missing = getIntent().getBooleanExtra("missing", true);
+            Intent openSurvey;
+            if (!missing) {
+                openSurvey = new Intent(this, Survey.class);
+                openSurvey.putExtra("time", time);
+                openSurvey.putExtra("survey", survey);
+                openSurvey.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(openSurvey);
+            } else {
+                surveyMissed();
+            }
+
         } else if (userId.isEmpty()) {
             setContentView(R.layout.activity_main);
             final Button startSurvey = (Button) findViewById(R.id.start_survey);
@@ -59,6 +75,42 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, List.class);
             startActivity(intent);
         }
+    }
+
+    private void surveyMissed() {
+        String id = prefs.getString("ID", "");
+        String date;
+        String time;
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
+        date = sdf.format(c.getTime());
+        SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
+        time = sdf2.format(c.getTime());
+        int day = prefs.getInt("SURVEY_DAY", -1);
+        int signal = prefs.getInt("SURVEY_SIGNAL", -1);
+        int[] answer = new int[1];
+        answer[0] = -1;
+        for (int surveyNumber = 0; surveyNumber < 6; surveyNumber++) {
+            SurveyItem surveyItem = new SurveyItem("survey", id, date, time, surveyNumber + 1, day, signal,
+                    answer);
+            JSONObject key;
+            try {
+                key = SurveyItemToJson.getJSONfromSurvey(surveyItem);
+                Intent intent = new Intent(this, Connection.class);
+                intent.putExtra("json", key.toString());
+                intent.putExtra("surveyNr", surveyNumber);
+                startActivity(intent);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        if (signal == 7) {
+            prefs.edit().putInt("SURVEY_DAY", day + 1).apply();
+            prefs.edit().putInt("SURVEY_SIGNAL", 1).apply();
+        } else {
+            prefs.edit().putInt("SURVEY_SIGNAL", signal + 1).apply();
+        }
+        finish();
     }
 
     @Override

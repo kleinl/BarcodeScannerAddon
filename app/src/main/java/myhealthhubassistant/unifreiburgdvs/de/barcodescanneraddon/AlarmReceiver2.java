@@ -33,6 +33,7 @@ public class AlarmReceiver2 extends BroadcastReceiver {
             Intent openSurvey = new Intent(context, MainActivity.class);
             openSurvey.putExtra("time", time);
             openSurvey.putExtra("survey", 0);
+            openSurvey.putExtra("missing", false);
             PendingIntent pIntent = PendingIntent.getActivity(context, 0, openSurvey, PendingIntent.FLAG_UPDATE_CURRENT);
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
@@ -61,7 +62,25 @@ public class AlarmReceiver2 extends BroadcastReceiver {
             }
 
             mNM.notify(1, notification);
-        } else {
+        } else if (counter == 0 && preferences.getLong("STOPTIME", 0) > cal.getTimeInMillis()) {
+            mNM.cancelAll();
+            Intent intentNew = new Intent(context, AlarmReceiver.class);
+            intentNew.putExtra("time", time);
+            intentNew.putExtra("usage", "delete");
+            context.sendBroadcast(intentNew);
+            Intent openSurvey = new Intent(context, MainActivity.class);
+            openSurvey.putExtra("time", time);
+            openSurvey.putExtra("survey", 0);
+            openSurvey.putExtra("missing", true);
+            PendingIntent pIntent = PendingIntent.getActivity(context, 0, openSurvey, PendingIntent.FLAG_UPDATE_CURRENT);
+            try {
+                pIntent.send();
+            } catch (PendingIntent.CanceledException e) {
+                e.printStackTrace();
+            }
+        }
+
+        else {
             mNM.cancelAll();
             Intent intentNew = new Intent(context, AlarmReceiver.class);
             intentNew.putExtra("time", time);
