@@ -88,9 +88,31 @@ public class MainActivity extends AppCompatActivity {
         time = sdf2.format(c.getTime());
         int day = prefs.getInt("SURVEY_DAY", -1);
         int signal = prefs.getInt("SURVEY_SIGNAL", -1);
-        int[] answer = new int[1];
-        answer[0] = -1;
+        int[] answer = new int[0];
         for (int surveyNumber = 0; surveyNumber < 6; surveyNumber++) {
+            switch(surveyNumber) {
+                case 0:
+                    answer = new int[10];
+                    break;
+                case 1:
+                    answer = new int[2];
+                    break;
+                case 2:
+                    answer = new int[2];
+                    break;
+                case 3:
+                    answer = new int[6];
+                    break;
+                case 4:
+                    answer = new int[7];
+                    break;
+                case 5:
+                    answer = new int[6];
+                    break;
+            }
+            for(int i = 0; i < answer.length; i++) {
+                answer[i] = -1;
+            }
             SurveyItem surveyItem = new SurveyItem("survey", id, date, time, surveyNumber + 1, day, signal,
                     answer);
             JSONObject key;
