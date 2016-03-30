@@ -42,4 +42,64 @@
         <item>100% juice (F.eks. Eplejuice, Appelsinjuice)</item>
         <item>F.eks. Gulrotjuice, Rødbetjuice</item>
     </string-array>
+
+    <string-array name="survey1">
+        <item>Jeg trenger noe hyggelig for å føle meg bedre.</item>
+        <item>Jeg føler meg tom.</item>
+        <item>Hvis jeg var fristet av noe akkurat nå, ville det vært veldig vanskelig å motstå.</item>
+        <item>Jeg ville ha ønsket å slutte med alle vanskelige oppgaver jeg ble gitt.</item>
+        <item>Jeg føler meg rolig og rasjonell</item>
+        <item>Jeg klarer ikke å ta til meg noe informasjon akkurat nå.</item>
+        <item>Jeg føler meg lat.</item>
+        <item>Jeg føler meg opplagt og fokusert.</item>
+        <item>Jeg vil gi opp.</item>
+        <item>Jeg føler det som om viljestyrken min er borte.</item>
+    </string-array>
+
+    <string-array name="survey2">
+        <item>Akkurat nå har jeg et sterkt behov for tilhørighet.</item>
+        <item>Siden din forrige besvarelse: Jeg hadde et sterkt behov for tilhørighet.</item>
+    </string-array>
+
+    <string-array name="survey3">
+        <item>Akkurat nå identifiserer jeg meg med/kjenner jeg en tilknytning til mine medstudenter/venner/familie.</item>
+        <item>Siden din forrige besvarelse: Jeg har identifisert meg med/kjent en tilknytning til mine medstudenter/venner/familie.</item>
+    </string-array>
+
+    <string-array name="survey4">
+        <item>Er andre personer tilstede?</item>
+        <item>Siden din forrige besvarelse: Var andre personer tilstede?</item>
+        <item>Er det andre personer fysisk tilstede som drikker sukkerholdige drikker?</item>
+        <item>Siden din forrige besvarelse: Var det andre personer fysisk tilstede som drakk sukkerholdige drikker?</item>
+        <item>Er det andre personer tilstede i media (f.eks., TV, radio, internett) som drikker sukkerholdige drikker?</item>
+        <item>Siden din forrige besvarelse: Var det andre personer tilstede i media (f.eks., TV, radio, internett) som drakk sukkerholdige drikker?</item>
+    </string-array>
+
+    <string-array name="survey5">
+        <item>Siden din forrige besvarelse: Hvor lenge har du sett på TV og/eller video/DVD/Blu-ray og/eller video streaming tjenester (f.eks. Netflix)?</item>
+        <item>Siden din forrige besvarelse: Hvor lenge har du brukt internett? (Vennligst se bort fra tid kun brukt til video og musikk streaming)</item>
+        <item>Siden din forrige besvarelse: Hvor lenge har du spilt på PC/Spillkonsoll med fast/håndholdt kontroll (Stillesittende spilling, f.eks PS4, Xbox 360)?</item>
+        <item>Siden din forrige besvarelse: Hvor lenge har du spilt på spillkonsoll med bevegelsessensorer (Aktiv spilling, f.eks. Wii, PS Move, Xbox Kinect)?</item>
+        <item>Siden din forrige besvarelse: Hvor lenge har du sittet ved/jobbet på en PC? (Vennligst se bort fra tid kun brukt til video og musikk streaming)</item>
+        <item>Siden din forrige besvarelse: Hvor lang tid har du brukt på å sende tekstmeldinger?</item>
+        <item>Siden din forrige besvarelse: Hvor lenge har du hørt på musikk på radio/mobil/strømmetjenester, o.l.? (Vennligst se bort fra tid hvor du samtidig har brukt internett eller PC til andre formål)</item>
+    </string-array>
+    <string-array name="survey6left">
+        <item>trøtt</item>
+        <item>fornøyd</item>
+        <item>stresset</item>
+        <item>full av energi</item>
+        <item>uvel</item>
+        <item>avslappet</item>
+    </string-array>
+
+    <string-array name="survey6right">
+        <item>våken</item>
+        <item>misfornøyd</item>
+        <item>rolig</item>
+        <item>tom for energi</item>
+        <item>vel</item>
+        <item>anspent</item>
+    </string-array>
+
 </resources>

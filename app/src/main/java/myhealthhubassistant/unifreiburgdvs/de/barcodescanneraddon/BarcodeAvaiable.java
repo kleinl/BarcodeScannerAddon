@@ -2,11 +2,8 @@ package myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -105,7 +102,7 @@ public class BarcodeAvaiable extends AppCompatActivity {
     }
 
     private void save() {
-        BarcodeItem barcodeItem = new BarcodeItem("item", id, date, time, name,
+        BarcodeItem barcodeItem = new BarcodeItem(id, date, time, name,
                 amount, barcode, barcodeName, ssb, lng, lat);
         JSONObject key;
         try {
@@ -131,9 +128,7 @@ public class BarcodeAvaiable extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            while (lat.equals("-")) {
-
-            }
+            while(lat.equals("-")) {}
             return "A";
         }
 

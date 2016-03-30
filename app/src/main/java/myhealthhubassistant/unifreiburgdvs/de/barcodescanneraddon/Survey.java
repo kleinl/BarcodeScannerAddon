@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
@@ -49,7 +49,6 @@ public class Survey extends AppCompatActivity {
     private int time;
     private int day;
     private int signal;
-    private boolean missing;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,7 +68,6 @@ public class Survey extends AppCompatActivity {
         question6Right = res.getStringArray(R.array.survey6right);
         int survey = getIntent().getIntExtra("survey", -1);
         time = getIntent().getIntExtra("time", -1);
-        missing = getIntent().getBooleanExtra("missing", true);
         day = prefs.getInt("SURVEY_DAY", -1);
         signal = prefs.getInt("SURVEY_SIGNAL", -1);
 
@@ -303,7 +301,7 @@ public class Survey extends AppCompatActivity {
         SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
         time = sdf2.format(c.getTime());
 
-        SurveyItem  surveyItem = new SurveyItem("survey", id, date, time, surveyNumber + 1, day, signal,
+        SurveyItem  surveyItem = new SurveyItem(id, date, time, surveyNumber + 1, day, signal,
                answer);
         JSONObject key;
         try {
@@ -324,6 +322,7 @@ public class Survey extends AppCompatActivity {
                 } else {
                     prefs.edit().putInt("SURVEY_SIGNAL", signal + 1).apply();
                 }
+                SystemClock.sleep(1000);
             }
             finish();
         } catch (JSONException e) {

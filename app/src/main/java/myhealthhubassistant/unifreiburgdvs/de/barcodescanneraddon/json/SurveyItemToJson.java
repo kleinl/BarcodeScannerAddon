@@ -4,10 +4,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.MainActivity;
-
 /**
  * Created by lukas on 11.11.15.
+ * Class to convert the Survey Item to a JSON Object for the myHealthHub Database.
  */
 public class SurveyItemToJson {
     public static JSONObject getJSONfromSurvey(SurveyItem surveyItem) throws JSONException {

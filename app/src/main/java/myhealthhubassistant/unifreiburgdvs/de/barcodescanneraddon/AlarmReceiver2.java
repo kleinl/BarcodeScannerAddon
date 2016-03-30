@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import java.util.Calendar;
 
@@ -18,11 +17,10 @@ import java.util.Calendar;
  */
 // second receiver to be called 3 times after the first one was.
 public class AlarmReceiver2 extends BroadcastReceiver {
-    SharedPreferences preferences;
     public static int counter = 3;
     @Override
     public void onReceive(Context context, Intent intent) {
-        preferences = context.getSharedPreferences(
+        SharedPreferences preferences = context.getSharedPreferences(
                 "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
         Calendar cal = Calendar.getInstance();
         counter--;

@@ -11,7 +11,7 @@ import android.os.Bundle;
 /**
  * Created by lukas on 27.11.15.
  */
-public class SingleShotLocationProvider {
+class SingleShotLocationProvider {
 
     public interface LocationCallback {
         void onNewLocationAvailable(GPSCoordinates location);
@@ -76,11 +76,6 @@ public class SingleShotLocationProvider {
     public static class GPSCoordinates {
         public float longitude = -1;
         public float latitude = -1;
-
-        public GPSCoordinates(float theLongitude, float theLatitude) {
-            longitude = theLongitude;
-            latitude = theLatitude;
-        }
 
         public GPSCoordinates(double theLongitude, double theLatitude) {
             longitude = (float) theLongitude;

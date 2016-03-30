@@ -17,15 +17,12 @@ import java.util.Arrays;
  * Created by lukas on 10.11.15.
  */
 public class List2 extends ListActivity {
-    String[] values;
-    String[] examples;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        values = getResources().getStringArray(R.array.list2);
-        examples = getResources().getStringArray(R.array.examples2);
-        final java.util.List<String> list = new ArrayList<String>(Arrays.asList(values));
+        final String[] values = getResources().getStringArray(R.array.list2);
+        final String[] examples = getResources().getStringArray(R.array.examples2);
+        final java.util.List<String> list = new ArrayList<>(Arrays.asList(values));
         ArrayAdapter adapter = new ArrayAdapter (this, android.R.layout.simple_list_item_2, android.R.id.text1, list) {
 
             @Override

@@ -11,12 +11,9 @@ import java.util.Calendar;
  * Gets called when the system reboots to reset the alarmSetter variable.
  */
 public class BootReceiver extends BroadcastReceiver {
-
-    private SharedPreferences prefs;
-
     @Override
     public void onReceive(Context context, Intent intent) {
-        prefs = context.getSharedPreferences(
+        SharedPreferences prefs = context.getSharedPreferences(
                 "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, -1);

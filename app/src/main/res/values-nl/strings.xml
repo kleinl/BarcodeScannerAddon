@@ -17,6 +17,7 @@
     <string name="button_plus">+</string>
     <string name="button_minus">-</string>
     <string name="forgot_name">Bitte geben einen Namen ein!</string>
+
     <!-- List Items with ssb -->
     <string name="ssb1">Suiker- en koolzuurhoudende drankjes</string>
     <string name="ssb2">Andere suikerhoudende drankjes</string>
@@ -46,68 +47,16 @@
 
     <string name="survey1button1">1 (helemaal niet)</string>
     <string name="survey1button7">7 (erg veel)</string>
-    <string-array name="survey1">
-        <item>Ik heb iets leuks nodig om me beter te voelen.</item>
-        <item>Ik voel me leeg.</item>
-        <item>Als ik op dit moment verleid zou worden door iets, zou het erg moeilijk te weerstaan zijn.</item>
-        <item>Ik zou iedere moeilijke opdracht, die ik nu zou krijgen, opgeven.</item>
-        <item>Ik voel me kalm en evenwichtig.</item>
-        <item>Ik kan op dit moment geen informatie opnemen.</item>
-        <item>Ik voel me traag en loom.</item>
-        <item>Ik voel me scherp en gefocust.</item>
-        <item>Ik wil opgeven.</item>
-        <item>Ik voel me alsof mijn wilskracht weg is.</item>
-    </string-array>
 
     <string name="survey2button1">1 (sterk mee oneens)</string>
     <string name="survey2button5">5 (sterk mee eens)</string>
-    <string-array name="survey2">
-        <item>Op dit specifieke moment: Ik heb een sterke behoefte om ergens bij te horen.</item>
-        <item>Sinds uw laatste antwoord: Ik had een sterke behoefte om ergens bij te horen.</item>
-    </string-array>
 
     <string name="survey3button1">1 (helemaal niet)</string>
     <string name="survey3button5">5 (erg veel)</string>
-    <string-array name="survey3">
-        <item>Op dit specifieke moment: Ik identificeer me/voel verbondenheid met mijn mede studenten/vrienden/familie.</item>
-        <item>Sinds uw laatste antwoord: Ik identificeer me/voel verbondenheid met mijn mede studenten/vrienden/familie.</item>
-    </string-array>
 
     <string name="survey4button1">0 (nee)</string>
     <string name="survey4button2">1 (ja)</string>
-    <string-array name="survey4">
-        <item>Zijn er andere mensen aanwezig?</item>
-        <item>Sinds uw laatste antwoord: Waren andere mensen aanwezig?</item>
-        <item>Zijn er andere mensen aanwezig die frisdrank drinken?</item>
-        <item>Sinds uw laatste antwoord: Waren andere mensen aanwezig die frisdrank drinken?</item>
-        <item>Ben je met andere mensen in contact via een ander medium (bijv. TV, radio, online) die frisdrank drinken?</item>
-        <item>Sinds uw laatste antwoord: Ben je met andere mensen in contact via een ander medium (bijv. TV, radio, online) die frisdrank drinken?</item>
-    </string-array>
-    <string-array name="survey5">
-        <item>Hoe lang heb je TV en/of video/DVD/Blu-ray of video streaming diensten (zoals Netflix) gekeken sinds de laatste herinnering?</item>
-        <item>Hoe lang heb je het internet gebruikt sinds de laatste herinnering? (Laat hierbij tijd voor het streamen van video en muziek buiten beschouwing.)</item>
-        <item>Hoe lang heb je achter een computer/spelcomputer gezeten sinds de laatste herinnering?</item>
-        <item>Hoe lang heb je actief gespeeld op een spelcomputer (bijv. Wii, PlayStation Move) sinds de laatste herinnering?</item>
-        <item>Hoe lang heb je gezeten/gewerkt achter een computer sinds de laatste herinnering? (Laat hierbij de tijd voor internetgebruik of het streamen van video en muziek buiten beschouwing.)</item>
-        <item>Hoeveel tijd heb je besteed aan het lezen en versturen van tekstberichten sinds de laatste herinnering?</item>
-        <item>Hoe lang heb je naar muziek geluisterd via radio/mobiel/stream dienst sinds de laatste herinnering? (Laat hierbij de tijd dat je internet of de computer gebruikte buiten beschouwing.)</item>
-    </string-array>
+
     <string name="survey6title">Hoe voel je je op dit moment?</string>
-    <string-array name="survey6left">
-        <item>moe</item>
-        <item>tevreden</item>
-        <item>geërgerd</item>
-        <item>vol energie</item>
-        <item>ziek, onwel</item>
-        <item>ontspannen</item>
-    </string-array>
-    <string-array name="survey6right">
-        <item>wakker</item>
-        <item>ontevreden</item>
-        <item>kalm</item>
-        <item>zonder energie</item>
-        <item>goed, gezond</item>
-        <item>gespannen</item>
-    </string-array>
 
 </resources>

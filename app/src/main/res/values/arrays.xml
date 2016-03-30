@@ -42,4 +42,65 @@
         <item>-</item>
         <item>-</item>
     </string-array>
+
+    <string-array name="survey1">
+        <item>I need something pleasant to make me feel better.</item>
+        <item>I feel drained.</item>
+        <item>If I were tempted by something right now, it would be very difficult to resist.</item>
+        <item>I would want to quit any difficult task I was given.</item>
+        <item>I feel calm and rational.</item>
+        <item>I cannot absorb any information right now.</item>
+        <item>I feel lazy.</item>
+        <item>I feel sharp and focused.</item>
+        <item>I want to give up.</item>
+        <item>I feel like my willpower is gone.</item>
+    </string-array>
+
+    <string-array name="survey2">
+        <item>Since your last reply: I had a strong need to belong.</item>
+        <item>At this particular moment I have a strong need to belong.</item>
+    </string-array>
+
+    <string-array name="survey3">
+        <item>At this particular moment I identify with/feel a connection to my fellow university students/friends/family.</item>
+        <item>Since your last reply: I have identified with/felt a connection to my fellow university students/friends/family.</item>
+    </string-array>
+
+    <string-array name="survey4">
+        <item>Are other people present?</item>
+        <item>Since your last reply: Were other people present?</item>
+        <item>Are other physically present people drinking soft drinks?</item>
+        <item>Since your last reply: Were other physically present people drinking soft drinks?</item>
+        <item>Are other people present in some other medium (e.g., TV, radio, on the internet) drinking soft drinks?</item>
+        <item>Since your last reply: Were other people present in some other medium (e.g. TV, radio, on the internet) drinking soft drinks?</item>
+    </string-array>
+
+    <string-array name="survey5">
+        <item>Since your last reply: How long did you watch TV and/or video/DVD/Blue-ray or video streaming services (e.g. Netflix)?</item>
+        <item>Since your last reply: How long did you use the internet? (Please disregard the time spent video and music streaming only.)</item>
+        <item>Since your last reply: How long did you sit at a computer/game console?</item>
+        <item>Since your last reply: How long did you actively play on a game console (e.g. Wii, PlayStation Move)?</item>
+        <item>Since your last reply: How long did you sit/work at a computer? (Please disregard the time spent with internet-use or video or music streaming only.)</item>
+        <item>Since your last reply: How much time did you spend on text messaging only?</item>
+        <item>Since your last reply: How long did you listen to music on your radio/mobile/streaming service only? (Please disregard the time spent while using the internet or the computer.) </item>
+    </string-array>
+
+    <string-array name="survey6left">
+        <item>tired</item>
+        <item>content</item>
+        <item>agitated</item>
+        <item>full of energy</item>
+        <item>unwell</item>
+        <item>relaxed</item>
+    </string-array>
+
+    <string-array name="survey6right">
+        <item>awake</item>
+        <item>discontent</item>
+        <item>calm</item>
+        <item>without energy</item>
+        <item>well</item>
+        <item>tense</item>
+    </string-array>
+
 </resources>

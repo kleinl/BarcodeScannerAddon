@@ -2,18 +2,17 @@ package myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.json;
 
 /**
  * Created by lukas on 06.08.15.
+ * Class to hold a SurveyItem.
  */
 public class SurveyItem {
-    private String kind;
-    private String id;
-    private String date;
-    private String time;
-    private int survey;
-    private int day;
-    private int signal;
+    private final String id;
+    private final String date;
+    private final String time;
+    private final int survey;
+    private final int day;
+    private final int signal;
     private int[] values;
-    public SurveyItem(String kind, String id, String date, String time, int survey, int day, int signal, int[] values) {
-        this.kind = kind;
+    public SurveyItem(String id, String date, String time, int survey, int day, int signal, int[] values) {
         this.id = id;
         this.date = date;
         this.time = time;
@@ -34,10 +33,6 @@ public class SurveyItem {
 
     public int[] getValues() {
         return values;
-    }
-
-    public String getKind() {
-        return kind;
     }
 
     public String getId() {

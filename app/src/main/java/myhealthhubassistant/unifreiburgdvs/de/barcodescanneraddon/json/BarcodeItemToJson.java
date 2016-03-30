@@ -5,11 +5,12 @@ import org.json.JSONObject;
 
 /**
  * Created by lukas on 10.11.15.
+ * Class to convert the Barcode Item to a JSON Object for the myHealthHub Database.
  */
 public class BarcodeItemToJson {
     public static JSONObject getJSONfromBarcode(BarcodeItem barcodeItem) throws JSONException {
         JSONObject jsonObj = new JSONObject();
-        jsonObj.putOpt("KIND", barcodeItem.getKind());
+        jsonObj.putOpt("KIND", "item");
         jsonObj.putOpt("USER_ID", barcodeItem.getId());
         jsonObj.putOpt("NAME", barcodeItem.getTitle());
         jsonObj.putOpt("BARCODE", barcodeItem.getPop_content());

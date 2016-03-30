@@ -2,25 +2,24 @@ package myhealthhubassistant.unifreiburgdvs.de.barcodescanneraddon.json;
 
 /**
  * Created by lukas on 06.08.15.
+ * Class to hold Barcode Information.
  */
 
 public class BarcodeItem {
-    private String kind;
-    private String id;
-    private String title;
-    private String barcode;
-    private String obj_date;
-    private String obj_time;
-    private String ssb;
-    private String amount;
-    private String lng;
-    private String lat;
-    private String barcodeName;
+    private final String id;
+    private final String title;
+    private final String barcode;
+    private final String obj_date;
+    private final String obj_time;
+    private final String ssb;
+    private final String amount;
+    private final String lng;
+    private final String lat;
+    private final String barcodeName;
 
-    public BarcodeItem(String kind, String id, String obj_date, String obj_time, String title,
+    public BarcodeItem(String id, String obj_date, String obj_time, String title,
                        String amount, String barcode, String barcodeName, String ssb, String lng, String lat
     ) {
-        this.kind = kind;
         this.id = id;
         this.title = title;
         this.barcode = barcode;
@@ -55,10 +54,6 @@ public class BarcodeItem {
 
     public String getAmount() {
         return amount;
-    }
-
-    public String getKind() {
-        return kind;
     }
 
     public String getSsb() {

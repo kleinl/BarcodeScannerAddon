@@ -12,6 +12,7 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             for(int i = 0; i < answer.length; i++) {
                 answer[i] = -1;
             }
-            SurveyItem surveyItem = new SurveyItem("survey", id, date, time, surveyNumber + 1, day, signal,
+            SurveyItem surveyItem = new SurveyItem(id, date, time, surveyNumber + 1, day, signal,
                     answer);
             JSONObject key;
             try {
@@ -126,13 +127,14 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        SystemClock.sleep(1000);
         if (signal == 7) {
             prefs.edit().putInt("SURVEY_DAY", day + 1).apply();
             prefs.edit().putInt("SURVEY_SIGNAL", 1).apply();
         } else {
             prefs.edit().putInt("SURVEY_SIGNAL", signal + 1).apply();
         }
-        finish();
+        self.finish();
     }
 
     @Override

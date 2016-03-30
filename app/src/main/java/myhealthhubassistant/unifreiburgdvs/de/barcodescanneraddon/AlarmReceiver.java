@@ -6,7 +6,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import java.util.Calendar;
 import java.util.Random;
@@ -17,10 +16,10 @@ import java.util.Random;
  * alarm receiver.
  */
 public class AlarmReceiver extends BroadcastReceiver {
-    SharedPreferences preferences;
+
     @Override
     public void onReceive(Context context, Intent intent) {
-        preferences = context.getSharedPreferences(
+        SharedPreferences preferences = context.getSharedPreferences(
                 "barcodescanneraddon.sharedPrefs", Context.MODE_PRIVATE);
         Calendar cal = Calendar.getInstance();
         if (preferences.getLong("STOPTIME", 0) > cal.getTimeInMillis()) {
